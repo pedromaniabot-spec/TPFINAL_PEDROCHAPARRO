@@ -263,6 +263,71 @@ footer {
 
 
 /* =========================================
+   ESTILOS BASE (MÓVIL)
+   ========================================= */
+
+/* Mostrar el botón hamburguesa en móvil */
+.hamburguesa {
+    display: block;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: white; /* Asumiendo que tu header tiene fondo oscuro */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Ocultar el menú por defecto en móvil */
+nav.menu#menu {
+    display: none; /* OCULTO POR DEFECTO */
+    position: absolute;
+    top: 60px; /* Ajusta según la altura de tu <header> */
+    right: 0;
+    width: 100%;
+    max-width: 300px; /* Limita el ancho en móvil si lo deseas */
+    background-color: #005cab;
+    z-index: 1000;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Clase que se añade con JS para MOSTRAR el menú en móvil */
+.menu-visible {
+    display: block !important;
+}
+
+/* Estilos de la lista principal */
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos de los elementos de la lista y enlaces */
+#menu ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Los submenús también deben estar ocultos por defecto en móvil */
+#menu .submenu ul {
+    display: none;
+    background-color: #0078d7; /* Un color ligeramente diferente para el submenú */
+    padding-left: 10px;
+}
+
+/* Estilo para mostrar el submenú cuando se le añade la clase 'activo' con JS */
+#menu .submenu.activo > ul {
+    display: block;
+}
+
+/* =========================================
    MENÚ DESPLEGADO EN PC (ARREGLADO)
    ========================================= */
 @media (min-width: 769px) {
@@ -270,12 +335,16 @@ footer {
     /* FORZAMOS VISIBILIDAD DEL MENÚ EN PC */
     nav.menu#menu {
         display: block !important;
-    }
-
-    #menu {
         position: static !important;
         background-color: #005cab !important;
         width: 100%;
+        max-width: none; /* Quitamos la limitación de ancho para PC */
+        box-shadow: none;
+    }
+
+    /* OCULTAMOS HAMBURGUESA EN PC */
+    .hamburguesa {
+        display: none !important;
     }
 
     #menu ul {
@@ -295,13 +364,12 @@ footer {
 
     #menu ul li a {
         padding: 12px 18px;
-        display: block;
         color: white;
         font-weight: bold;
         text-decoration: none;
     }
 
-    /* SUBMENÚS EN PC */
+    /* SUBMENÚS EN PC (ocultos por defecto, visibles al pasar el mouse) */
     #menu .submenu ul {
         display: none;
         position: absolute;
@@ -317,23 +385,20 @@ footer {
     }
 
     #menu .submenu:hover ul {
-        display: block;
+        display: block; /* Visibilidad al hacer HOVER en PC */
     }
 
     #menu .submenu ul li a {
         padding: 10px 15px;
         color: white;
     }
-
-    /* OCULTAMOS HAMBURGUESA EN PC */
-    .hamburguesa {
-        display: none !important;
+    
+    /* Aseguramos que los submenús no tengan la clase 'activo' en PC (limpieza) */
+    #menu .submenu.activo > ul {
+        display: none;
     }
+    
 }
-
-
-
-
 
 /* =========================
     PÁGINA GALERÍA
@@ -1515,55 +1580,3 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
-
-/* ====== FORZAR QUE EL MENÚ APAREZCA EN PC ====== */
-@media (min-width: 769px) {
-    nav.menu {
-        display: block !important;
-        background-color: #005cab;
-    }
-
-    /* El menú se ordena horizontal */
-    nav.menu ul {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    /* Quita bordes feos del modo móvil */
-    nav.menu ul li {
-        border: none;
-        position: relative;
-    }
-
-    /* Estilo de los enlaces */
-    nav.menu ul li a {
-        padding: 10px 15px;
-        color: white;
-        font-weight: bold;
-    }
-
-    /* Submenús en PC (solo al pasar el mouse) */
-    nav.menu .submenu ul {
-        display: none;
-        position: absolute;
-        top: 40px;
-        left: 0;
-        background: #003d6b;
-        padding: 0;
-        width: 180px;
-        border-radius: 8px;
-    }
-
-    nav.menu .submenu:hover ul {
-        display: block;
-    }
-
-    /* La hamburguesa desaparece en PC */
-    .hamburguesa {
-        display: none !important;
-    }
-}
-
-
-
