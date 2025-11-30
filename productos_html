@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Informáticos</title>
+    <link rel="stylesheet" href="../static/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h1>Productos Informáticos</h1>
+</header>
+
+<main>
+
+    <section class="descripcion">
+        <h2>Lista de productos informáticos</h2>
+        <p>A continuación encontrarás una galería con productos relacionados al mundo de la informática.</p>
+    </section>
+
+    <section class="productos-grid">
+
+        <div class="producto">
+            <img src="../static/images/monitor.jpg" alt="Monitor">
+            <h3>Monitor Gamer</h3>
+            <p>Pantalla de 27 pulgadas con 144Hz y 1ms de respuesta.</p>
+        </div>
+
+        <div class="producto">
+            <img src="../static/images/teclado.jpg" alt="Teclado">
+            <h3>Teclado Mecánico</h3>
+            <p>Interruptores blue con retroiluminación RGB.</p>
+        </div>
+
+        <div class="producto">
+            <img src="../static/images/mouse.jpg" alt="Mouse">
+            <h3>Mouse Gamer</h3>
+            <p>Sensor óptico de alta precisión y 6 botones configurables.</p>
+        </div>
+
+        <div class="producto">
+            <img src="../static/images/auriculares.jpg" alt="Auriculares">
+            <h3>Auriculares</h3>
+            <p>Audio envolvente 7.1, micrófono HD retráctil.</p>
+        </div>
+
+        <div class="producto">
+            <img src="../static/images/notebook.jpg" alt="Notebook">
+            <h3>Notebook</h3>
+            <p>Ideal para oficina, estudio y trabajo profesional.</p>
+        </div>
+
+        <div class="producto">
+            <img src="../static/images/gpu.jpg" alt="Placa de video">
+            <h3>Placa de Video</h3>
+            <p>8 GB GDDR6, rendimiento extremo para juegos y diseño.</p>
+        </div>
+
+    </section>
+
+    <div class="botones">
+        <a href="../index.html" class="btn"><i class="fa-solid fa-house"></i> Volver al Inicio</a>
+        <a href="banco_tabla.html" class="btn"><i class="fa-solid fa-arrow-right"></i> Página Siguiente</a>
+    </div>
+
+</main>
+
+</body>
+</html>
 
