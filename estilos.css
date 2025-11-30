@@ -263,110 +263,114 @@ footer {
 
 
 /* =========================
-   MENÚ HAMBURGUESA
+   MENU HAMBURGUESA + DESPLEGABLE RESPONSIVE
 ========================= */
-.hamburguesa {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    display: none;
-}
 
 .menu {
     background-color: #005cab;
-    display: none;
+    padding: 10px;
+    border-radius: 8px;
+    display: none; /* se mostrará solo en móvil */
 }
 
+.hamburguesa {
+    background: #0078d7;
+    color: white;
+    padding: 10px 15px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+/* Items del menú */
 .menu ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .menu ul li {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 10px;
+    text-align: center;
+    position: relative;
 }
 
 .menu ul li a {
-    display: block;
-    padding: 12px;
-    color: white;
     text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
 }
 
-.menu ul li a:hover {
-    background-color: #004a87;
-}
-
+/* Submenús */
 .submenu ul {
     display: none;
-    background-color: #003d6b;
 }
 
 .submenu:hover ul {
     display: block;
+    background-color: #0078d7;
+    border-radius: 8px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hamburguesa {
-        display: block;
-    }
+/* =========================
+   VERSIÓN PC (ARREGLO DEFINITIVO)
+========================= */
 
-    nav {
-        width: 100%;
-    }
-}
-
-
-/* Menú visible en PC */
 @media (min-width: 769px) {
-    #menu {
-        display: block !important;
-        position: static;
-        background-color: transparent;
+    .hamburguesa {
+        display: none; /* Ocultar hamburguesa en PC */
     }
 
-    #menu ul {
+    nav.menu {
+        display: block !important; /* El menú ahora aparece SIEMPRE en PC */
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .menu ul {
         display: flex;
         justify-content: center;
         gap: 20px;
     }
 
-    #menu ul li {
+    .menu ul li {
         border: none;
-        position: relative;
+        padding: 0;
     }
 
-    #menu ul li a {
-        padding: 10px 15px;
+    .menu ul li a {
+        padding: 10px 20px;
         color: white;
         font-weight: bold;
     }
 
-    /* Submenús */
-    #menu .submenu ul {
-        display: none;
+    /* Submenús bonitos en PC */
+    .submenu ul {
         position: absolute;
         top: 40px;
-        background: #005cab;
-        padding: 0;
+        left: 0;
         width: 180px;
+        background: #005cab;
+        padding: 10px 0;
         border-radius: 8px;
+        display: none;
     }
 
-    #menu .submenu:hover ul {
+    .submenu:hover ul {
         display: block;
     }
 
-    .hamburguesa {
-        display: none;
+    .submenu ul li {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 }
+
 
 
 
@@ -1558,3 +1562,4 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block !important;
     }
 }
+
