@@ -318,56 +318,74 @@ footer {
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* Menú visible en PC */
+/* =========================================
+   MENÚ DESPLEGADO EN PC (ARREGLADO)
+   ========================================= */
 @media (min-width: 769px) {
 
-    /* FORZAMOS VISIBILIDAD EN PC */
+    /* FORZAMOS VISIBILIDAD DEL MENÚ EN PC */
     nav.menu#menu {
         display: block !important;
     }
 
     #menu {
-        position: static;
-        background-color: transparent;
+        position: static !important;
+        background-color: #005cab !important;
+        width: 100%;
     }
 
     #menu ul {
-        display: flex;
+        display: flex !important;
         justify-content: center;
-        gap: 20px;
+        align-items: center;
+        gap: 25px;
+        padding: 0;
+        margin: 0;
     }
 
     #menu ul li {
-        border: none;
+        list-style: none;
         position: relative;
+        border: none;
     }
 
     #menu ul li a {
-        padding: 10px 15px;
+        padding: 12px 18px;
+        display: block;
         color: white;
         font-weight: bold;
+        text-decoration: none;
     }
 
-    /* Submenús */
+    /* SUBMENÚS EN PC */
     #menu .submenu ul {
         display: none;
         position: absolute;
-        top: 40px;
-        background: #005cab;
+        top: 45px;
+        left: 0;
+        background: #0078d7;
         padding: 0;
+        margin: 0;
         width: 180px;
         border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        z-index: 999;
     }
 
     #menu .submenu:hover ul {
         display: block;
     }
 
+    #menu .submenu ul li a {
+        padding: 10px 15px;
+        color: white;
+    }
+
+    /* OCULTAMOS HAMBURGUESA EN PC */
     .hamburguesa {
-        display: none;
+        display: none !important;
     }
 }
-
 
 
 /* =========================
@@ -1550,6 +1568,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
