@@ -319,36 +319,50 @@ footer {
 }
 
 /* Menú visible en PC */
-/* Este código es parte de tu estilos.css */
-
-/*
-   Asegúrate de que esta regla exista y esté bien ubicada
-   en tu Media Query de escritorio (desktop)
-*/
-@media (min-width: 992px) {
-    /* Muestra el menú en pantallas grandes y lo posiciona normalmente */
-    .menu {
-        display: flex !important; /* Mantiene el menú visible */
+@media (min-width: 769px) {
+    #menu {
+        display: block !important;
         position: static;
-        width: auto;
-        height: auto;
-        opacity: 1;
-        transform: translateX(0);
-        background-color: transparent; /* Si aplicaste fondo en móvil, quítalo */
+        background-color: transparent;
     }
 
-    /* Asegura que la lista principal (ul) también se muestre como fila */
-    .menu ul {
-        flex-direction: row;
-        gap: 1rem; /* Espaciado entre elementos del menú principal */
-        border: none;
+    #menu ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
     }
-    
-    /* Oculta el botón hamburguesa en escritorio */
+
+    #menu ul li {
+        border: none;
+        position: relative;
+    }
+
+    #menu ul li a {
+        padding: 10px 15px;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Submenús */
+    #menu .submenu ul {
+        display: none;
+        position: absolute;
+        top: 40px;
+        background: #005cab;
+        padding: 0;
+        width: 180px;
+        border-radius: 8px;
+    }
+
+    #menu .submenu:hover ul {
+        display: block;
+    }
+
     .hamburguesa {
         display: none;
     }
 }
+
 
 /* =========================
     PÁGINA GALERÍA
@@ -1530,4 +1544,5 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
