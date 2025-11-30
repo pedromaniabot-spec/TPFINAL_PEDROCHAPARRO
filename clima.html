@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima con OpenWeatherMap</title>
+    <link rel="stylesheet" href="estilos.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Consulta del Clima</h1>
+
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-api clima-widget">
+            <h2>☁️ Consulta el Clima por Ciudad</h2>
+            <p>Ingresa el nombre de una ciudad para obtener su temperatura, humedad y estado del cielo.</p>
+            
+            <div class="input-clima">
+                <input type="text" id="inputCiudad" placeholder="Ej: Londres, Tokio, Asunción">
+                <button id="btnBuscarClima" class="btn"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+            </div>
+
+            <div id="resultadoClima" class="clima-info" style="display:none;">
+                <h3 id="ciudadNombre"></h3>
+                <div class="clima-datos">
+                    <p class="temperatura-actual"><i class="fa-solid fa-temperature-three-quarters"></i> <span id="temperatura"></span></p>
+                    <p><i class="fa-solid fa-droplet"></i> Humedad: <span id="humedad"></span></p>
+                    <p><i class="fa-solid fa-wind"></i> Viento: <span id="viento"></span></p>
+                    <p class="clima-estado"><i class="fa-solid fa-cloud"></i> Estado: <span id="estadoClima"></span></p>
+                    <img id="iconoClima" src="" alt="Icono del Clima" style="display:none;">
+                </div>
+            </div>
+
+            <div id="mensajeError" class="error-mensaje" style="display:none;">
+                No se pudo encontrar el clima para esa ciudad. Inténtalo de nuevo.
+            </div>
+
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="../Bienvenida.js"></script>
+    <script src="../Menu.js"></script>
+    <script src="apis.js"></script> </body>
+</html>
