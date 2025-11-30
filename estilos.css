@@ -1405,3 +1405,141 @@ document.addEventListener('DOMContentLoaded', () => {
         margin-bottom: 20px;
     }
 }
+
+/* =========================
+    PÁGINA MENÚ 3 (DROPDOWN CSS)
+========================= */
+
+/* Estilos de la barra principal (Similar a Menu 1, pero crucial para el posicionamiento) */
+.menu-dropdown {
+    background-color: #3f51b5; /* Azul oscuro */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Horizontal */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-dropdown li {
+    /* CLAVE: Establece la posición relativa para que el submenú se posicione ABSOLUTAMENTE en relación a este LI. */
+    position: relative; 
+}
+
+.menu-dropdown li a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.menu-dropdown li a:hover {
+    background-color: #303f9f;
+}
+
+/* --- ESTILOS DE SUBMENÚ (Dropdown) --- */
+
+.submenu {
+    /* CLAVE: Ocultar por defecto */
+    display: none; 
+    
+    /* CLAVE: Posicionar el menú fuera del flujo normal */
+    position: absolute; 
+    top: 100%; /* Empieza justo debajo del elemento padre LI */
+    left: 0;
+    
+    min-width: 200px;
+    background-color: #444; /* Fondo del submenú */
+    z-index: 1000; /* Asegura que el menú esté sobre otros elementos */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.submenu li {
+    /* Deshacer la alineación flexbox para los elementos del submenú */
+    display: block; 
+    width: 100%;
+    border-bottom: 1px solid #555;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    color: #eee;
+    font-weight: normal;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* --- LÓGICA DE DESPLIEGUE (LA PARTE MÁS IMPORTANTE) --- */
+.menu-dropdown li:hover > .submenu {
+    /* Cuando el LI padre recibe hover, su UL hijo inmediato con clase .submenu se muestra. */
+    display: block;
+}
+
+/* --- ESTILOS DE SUB-SUBMENÚ (Flyout Menu, Nivel 2) --- */
+
+.submenu-secundario {
+    /* CLAVE: Se posiciona a la derecha del elemento LI padre (Ropa) */
+    left: 100%; 
+    top: 0; 
+    
+    /* Se reutiliza la clase .submenu */
+}
+
+/* LÓGICA DE DESPLIEGUE DEL Nivel 2 */
+.submenu li:hover > .submenu-secundario {
+    /* Cuando el LI padre (Ropa) recibe hover, su UL hijo inmediato con clase .submenu-secundario se muestra. */
+    display: block;
+}
+
+/* Ajustes visuales de iconos */
+.has-submenu a i {
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+
+/* --- RESPONSIVIDAD (Apilar en móvil, similar a Menú 1) --- */
+@media (max-width: 600px) {
+    .menu-dropdown ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .menu-dropdown li {
+        border-bottom: 1px solid #444;
+        position: static; /* Quita el relative, ya que no habrá dropdown lateral en móvil */
+    }
+
+    .submenu {
+        position: static; /* Los submenús se apilan debajo en móvil */
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border-top: 1px solid #555;
+        background-color: #666;
+    }
+
+    .submenu-secundario {
+        position: static;
+        padding-left: 20px; /* Indentar el Nivel 2 */
+    }
+    
+    .menu-dropdown li:hover > .submenu {
+        /* Se mantiene la lógica de hover, pero solo se aplica a la posición apilada */
+        display: block;
+    }
+}
