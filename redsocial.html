@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Social - Feed Principal</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Feed de la Red Social</h1>
+        
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-feed">
+            <h2>Últimas Publicaciones</h2>
+            
+            <article class="post-card" data-post-id="1">
+                <div class="post-header">
+                    <img src="../statics/images/avatar_user1.jpg" alt="Avatar User 1" class="avatar">
+                    <span class="username">@Laura_Dev</span>
+                </div>
+                <div class="post-content">
+                    <p>¡Gran día aprendiendo a usar las grids de CSS! La responsividad ahora es mucho más fácil. #CSSGrid #DesarrolloWeb</p>
+                    <img src="images/imagen_ejemplo_redsocial.jpg" alt="Post Imagen" class="post-media">
+                </div>
+                <div class="post-actions">
+                    <button class="btn-like" data-post="1">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="like-counter" id="likes-1">0</span> Likes
+                    </button>
+                    <button class="btn-comment"><i class="fa-regular fa-comment"></i> Comentar</button>
+                </div>
+            </article>
+
+            <article class="post-card" data-post-id="2">
+                <div class="post-header">
+                    <img src="images/avatar_user2.jpg" alt="Avatar User 2" class="avatar">
+                    <span class="username">@Tech_Global</span>
+                </div>
+                <div class="post-content">
+                    <p>¡Mira nuestro nuevo video sobre las tendencias de IA para el próximo año!</p>
+                    <video controls muted class="post-media video-post">
+                        <source src="../statics/video/video_ejemplo_redsocial.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class="post-actions">
+                    <button class="btn-like" data-post="2">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="like-counter" id="likes-2">0</span> Likes
+                    </button>
+                    <button class="btn-comment"><i class="fa-regular fa-comment"></i> Comentar</button>
+                </div>
+            </article>
+
+            <article class="post-card" data-post-id="3">
+                <div class="post-header">
+                    <img src="images/avatar_user3.jpg" alt="Avatar User 3" class="avatar">
+                    <span class="username">@Podcast_Code</span>
+                </div>
+                <div class="post-content">
+                    <p>¡Nuevo episodio de nuestro podcast sobre la vida de un desarrollador freelance! Escúchalo aquí:</p>
+                    <audio controls class="post-media audio-post">
+                         <source src="audio/audio_musica.mp3" type="audio/mp3">
+                        Tu navegador no soporta el audio.
+                    </audio>
+                </div>
+                <div class="post-actions">
+                    <button class="btn-like" data-post="3">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="like-counter" id="likes-3">0</span> Likes
+                    </button>
