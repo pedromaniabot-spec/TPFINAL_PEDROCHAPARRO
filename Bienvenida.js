@@ -12,6 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById("mensajeBienvenida").innerHTML =
-        `Bienvenido/a ${nombre} ${apellido}. ${mensaje}`;
+        `Bienvenido/a ${nombre} ${apellido}. ${BIENVENIDO}`;
 });
 
