@@ -1,7 +1,6 @@
-// js/apis.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Reemplaza esta línea con tu clave de la API de OpenWeatherMap
     const API_KEY = '073af263647213d1c9a6de533a7b6c97'; 
     const URL_BASE = 'https://api.openweathermap.org/data/2.5/weather';
 
