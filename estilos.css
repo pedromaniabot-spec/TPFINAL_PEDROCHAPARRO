@@ -858,3 +858,36 @@ document.addEventListener('DOMContentLoaded', () => {
         resultadoPokemonDiv.style.display = 'block';
     };
 });
+
+/* =========================
+    PÁGINA MULTIMEDIA 1 (MAPAS)
+========================= */
+
+.mapa-seccion {
+    padding: 20px;
+    text-align: center;
+}
+
+.mapa-contenedor {
+    /* Contenedor que limita el ancho del mapa */
+    max-width: 800px;
+    margin: 25px auto;
+    border: 5px solid #0078d7;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    /* Hace que el contenedor sea responsivo manteniendo la relación de aspecto 16:9 */
+    position: relative;
+    padding-bottom: 56.25%; /* (9/16)*100 = 56.25% */
+    height: 0;
+}
+
+.mapa-contenedor iframe {
+    /* Asegura que el iframe ocupe todo el espacio del contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Eliminar el borde nativo del iframe */
+}
