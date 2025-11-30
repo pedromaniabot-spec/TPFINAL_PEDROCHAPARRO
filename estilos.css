@@ -1556,10 +1556,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }
 
-/* FORZAR MENÚ DESPLEGADO EN PC */
-@media (min-width: 769px) {
-    nav.menu {
-        display: block !important;
-    }
-}
-
