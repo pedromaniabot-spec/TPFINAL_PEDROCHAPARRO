@@ -276,7 +276,7 @@ footer {
 /* Menú oculto por defecto en móvil */
 nav.menu {
     background-color: #005cab;
-    display: none; /* Oculto por defecto */
+    display: block; 
     width: 100%;
     flex-direction: column;
 }
@@ -325,7 +325,7 @@ nav.menu .submenu.activo ul {
 @media (min-width: 769px) {
 
     .hamburguesa {
-        display: none !important;
+        display: block !important;
     }
 
     nav.menu {
@@ -352,7 +352,7 @@ nav.menu .submenu.activo ul {
 
     /* Submenú PC */
     nav.menu .submenu ul {
-        display: none;
+        display: block;
         position: absolute;
         top: 42px;
         left: 0;
@@ -1566,5 +1566,6 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
