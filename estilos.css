@@ -518,3 +518,95 @@ footer {
     color: #333;
     margin: 10px 0 0;
 }
+
+/* =========================
+    PÁGINA MATRICULACIÓN (FORMULARIOS)
+========================= */
+
+.contenedor-formulario {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: aparecer 0.8s ease;
+}
+
+.formulario {
+    padding: 20px 0;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+legend {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #0078d7;
+    padding: 0 10px;
+}
+
+.input-grupo {
+    margin-bottom: 18px;
+}
+
+.input-grupo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-grupo input[type="text"],
+.input-grupo input[type="email"],
+.input-grupo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-grupo input:focus,
+.input-grupo select:focus {
+    border-color: #0078d7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 120, 215, 0.3);
+}
+
+.opciones-radio {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.opciones-radio label {
+    font-weight: normal;
+}
+
+.terminos-condiciones {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.error-mensaje {
+    color: #ff4136; /* Rojo para errores */
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.btn-secundario {
+    background: #6c757d;
+}
+
+.btn-secundario:hover {
+    background: #5a6268;
+}
