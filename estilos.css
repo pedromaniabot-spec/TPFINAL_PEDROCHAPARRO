@@ -939,3 +939,57 @@ document.addEventListener('DOMContentLoaded', () => {
     height: 100%;
     border-radius: 5px;
 }
+
+/* =========================
+    PÁGINA MULTIMEDIA 3 (Video y Audio Nativo)
+========================= */
+
+.video-container {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.audio-container {
+    max-width: 700px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: center;
+}
+
+/* Estilo para los reproductores de video */
+.media-item {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+
+.media-item video {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Limita la altura del video */
+    border-radius: 5px;
+    background: #000;
+}
+
+.media-item audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.separador {
+    margin: 40px 0;
+    border: 0;
+    border-top: 2px dashed #ccc;
+}
+
+/* Adaptación para dispositivos pequeños */
+@media (max-width: 768px) {
+    .audio-container {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+}
