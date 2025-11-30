@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Menú 1 - Clásico</title>
+    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Menú Clásico con Flexbox</h1>
+        
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-menu-ejemplo">
+            <h2>Ejemplo de Navegación Simple (Menú 1)</h2>
+            <p>Este menú está diseñado usando **Flexbox** para centrar y distribuir los elementos de manera horizontal y eficiente.</p>
+            
+            <nav class="menu-ejemplo menu-flex">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="contenido-muestra">
+                <h3>Contenido de la Página</h3>
+                <p>Aquí se podría ubicar el contenido específico de tu página. La barra de navegación anterior es independiente del menú principal de tu proyecto.</p>
+            </div>
+
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="../Bienvenida.js"></script>
+    <script src="../Menu.js"></script>
+</body>
+</html>
