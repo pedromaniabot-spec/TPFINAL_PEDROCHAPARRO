@@ -1,6 +1,16 @@
-const btnMenu = document.getElementById("btnMenu");
-const menu = document.getElementById("menu");
 
-btnMenu.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
+const itemsConSubmenu = document.querySelectorAll('.menu-dropdown li.has-submenu');
+
+itemsConSubmenu.forEach(item => {
+    // Escucha click para dispositivos móviles
+    item.addEventListener('click', (e) => {
+        // Evita que el click haga scroll o siga el link
+        e.preventDefault();
+        
+        // Alterna la clase 'activo' para mostrar/ocultar el submenú
+        const submenu = item.querySelector('.submenu');
+        if(submenu) {
+            submenu.classList.toggle('activo');
+        }
+    });
 });
