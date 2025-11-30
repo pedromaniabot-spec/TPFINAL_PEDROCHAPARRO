@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex con PokéAPI</title>
+    <link rel="stylesheet" href="estilos.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Explorador Pokémon (Pokédex)</h1>
+
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-api pokedex-app">
+            <h2>🔎 Busca un Pokémon por Nombre o ID</h2>
+            <p>Utilizamos la PokéAPI para obtener datos de tu Pokémon favorito.</p>
+            
+            <div class="input-pokemon">
+                <input type="text" id="inputPokemon" placeholder="Ej: pikachu, bulbasaur, 25">
+                <button id="btnBuscarPokemon" class="btn"><i class="fa-solid fa-bolt"></i> Buscar Pokémon</button>
+            </div>
+
+            <div id="resultadoPokemon" class="pokemon-card" style="display:none;">
+                <h3 id="pokemonNombre"></h3>
+                <img id="pokemonSprite" src="" alt="Sprite del Pokémon">
+                
+                <div class="datos-principales">
+                    <p><strong>Nº Pokédex:</strong> <span id="pokemonId"></span></p>
+                    <p><strong>Altura:</strong> <span id="pokemonAltura"></span> m</p>
+                    <p><strong>Peso:</strong> <span id="pokemonPeso"></span> kg</p>
+                </div>
+                
+                <h4>Tipos:</h4>
+                <div id="pokemonTipos" class="tipos-lista"></div>
+
+                <h4>Estadísticas Base:</h4>
+                <ul id="pokemonStats" class="stats-lista">
+                    </ul>
+            </div>
+
+            <div id="mensajeErrorPokemon" class="error-mensaje" style="display:none;">
+                Pokémon no encontrado. Verifica el nombre o ID.
+            </div>
+
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="../Bienvenida.js"></script>
+    <script src="../Menu.js"></script>
+    <script src="apis.js"></script> </body>
+</html>
