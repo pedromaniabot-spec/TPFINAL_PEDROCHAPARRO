@@ -891,3 +891,51 @@ document.addEventListener('DOMContentLoaded', () => {
     height: 100%;
     border: none; /* Eliminar el borde nativo del iframe */
 }
+
+/* =========================
+    PÁGINA MULTIMEDIA 2 (YouTube)
+========================= */
+
+.contenedor-multimedia {
+    padding: 20px;
+    text-align: center;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.video-item {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-item h3 {
+    color: #cc181e; /* Color de YouTube */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* CLASE CRÍTICA PARA HACER EL VIDEO RESPONSIVO */
+.video-responsive {
+    /* Mantiene la relación de aspecto 16:9 */
+    position: relative;
+    padding-bottom: 56.25%; /* (9/16)*100 = 56.25% */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
