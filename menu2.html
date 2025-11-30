@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Menú 2 - Lateral</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Menú Lateral con CSS Grid</h1>
+        
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main class="grid-principal">
+        
+        <aside class="menu-lateral">
+            <h3>Secciones Rápidas</h3>
+            <nav class="menu-ejemplo menu-sidebar">
+                <ul>
+                    <li><a href="#intro"><i class="fa-solid fa-lightbulb"></i> Introducción</a></li>
+                    <li><a href="#ventajas"><i class="fa-solid fa-circle-check"></i> Ventajas</a></li>
+                    <li><a href="#implementacion"><i class="fa-solid fa-code"></i> Implementación</a></li>
+                    <li><a href="#casos"><i class="fa-solid fa-layer-group"></i> Casos de Uso</a></li>
+                    <li><a href="#contacto-lateral"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="contenido-principal">
+            <h2>Diseño de Página con Barra Lateral</h2>
+
+            <article id="intro">
+                <h3>1. Introducción al Diseño de Anclas</h3>
+                <p>Este tipo de diseño se utiliza comúnmente en documentación o paneles de control. El menú lateral (**Sidebar**) permanece fijo y permite al usuario saltar rápidamente entre las secciones de contenido extenso sin tener que desplazarse de forma vertical.</p>
+                <div style="height: 300px; background-color: #eaf7ff; padding: 15px;">(Espacio para simular contenido extenso)</div>
+            </article>
+
+            <article id="ventajas">
+                <h3>2. Ventajas Clave</h3>
+                <ul>
+                    <li>Mejora la **navegación interna**.</li>
+                    <li>Ofrece un acceso rápido a contenido clave.</li>
+                    <li>Es ideal para sitios con **contenido muy largo** en una sola URL.</li>
+                </ul>
+                <div style="height: 300px; background-color: #f0f0f0; padding: 15px;">(Más contenido de ejemplo)</div>
+            </article>
+
+            <article id="implementacion">
+                <h3>3. Cómo Implementarlo con CSS Grid</h3>
+                <p>Usamos CSS Grid para definir dos columnas: una estrecha para el menú lateral y otra ancha para el contenido principal, asegurando que el diseño sea estable y fácil de manejar. <a href="#" class="btn-scroll">Volver Arriba</a></p>
+                <div style="height: 300px; background-color: #eaf7ff; padding: 15px;">(Más contenido de ejemplo)</div>
+            </article>
+
+            <article id="casos">
+                <h3>4. Casos de Uso Comunes</h3>
+                <p>Documentación técnica, blogs con secciones de autor, y dashboards administrativos son los mejores lugares para usar este patrón de diseño.</p>
+                <div style="height: 300px; background-color: #f0f0f0; padding: 15px;">(Más contenido de ejemplo)</div>
+            </article>
+
+            <article id="contacto-lateral">
+                <h3>5. Contacto</h3>
+                <p>Si tienes preguntas sobre este diseño, usa la sección de contacto.</p>
+            </article>
+            
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+        </section>
+    </main>
+
+    <script src="Bienvenida.js"></script>
+    <script src="Menu.js"></script>
+</body>
+</html>
