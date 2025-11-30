@@ -1249,3 +1249,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }
 
+/* =========================
+    PÁGINA MENÚS
+========================= */
+
+.contenedor-menu-ejemplo {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contenido-muestra {
+    background: #f8f8f8;
+    padding: 30px;
+    margin-top: 40px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+}
+
+/* --- ESTILOS ESPECÍFICOS DEL MENÚ 1 (FLEXBOX CLÁSICO) --- */
+.menu-flex {
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.menu-flex ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    /* PROPIEDADES CLAVE DE FLEXBOX */
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.menu-flex li a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-flex li a:hover {
+    background-color: #0078d7; /* Cambia de color al pasar el mouse */
+    color: #fff;
+}
+
+/* Iconos */
+.menu-flex li a i {
+    margin-right: 5px;
+}
+
+/* --- RESPONSIVIDAD (Asegura que el menú se vea bien en móvil) --- */
+@media (max-width: 600px) {
+    .menu-flex ul {
+        flex-direction: column; /* Apila los elementos verticalmente en pantallas pequeñas */
+        align-items: stretch; /* Estira los enlaces para ocupar todo el ancho */
+    }
+    
+    .menu-flex li {
+        border-bottom: 1px solid #444;
+    }
+    
+    .menu-flex li:last-child {
+        border-bottom: none;
+    }
+}
