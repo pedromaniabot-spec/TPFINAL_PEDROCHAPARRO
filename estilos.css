@@ -433,3 +433,88 @@ footer {
         grid-template-columns: 1fr; /* Una columna en móviles muy pequeños */
     }
 }
+
+/* =========================
+    PÁGINA OPERACIONES
+========================= */
+
+.contenedor-operaciones {
+    text-align: center;
+}
+
+.calculadora-app {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-grupo {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-grupo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #0078d7;
+}
+
+.input-grupo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no cambie el ancho total */
+    font-size: 16px;
+}
+
+.botones-operaciones {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-operacion {
+    flex-grow: 1; /* Hace que todos los botones ocupen el mismo espacio */
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0078d7;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-operacion:hover {
+    background-color: #005cab;
+}
+
+.btn-operacion:active {
+    transform: scale(0.98);
+}
+
+.resultado-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #0078d7;
+    border-radius: 5px;
+    background-color: #e6f0ff;
+}
+
+.resultado-box h3 {
+    margin-top: 0;
+    color: #0078d7;
+}
+
+#resultado-calculo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 0;
+}
