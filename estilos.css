@@ -320,8 +320,13 @@ footer {
 
 /* Menú visible en PC */
 @media (min-width: 769px) {
-    #menu {
+
+    /* FORZAMOS VISIBILIDAD EN PC */
+    nav.menu#menu {
         display: block !important;
+    }
+
+    #menu {
         position: static;
         background-color: transparent;
     }
@@ -362,6 +367,7 @@ footer {
         display: none;
     }
 }
+
 
 
 /* =========================
@@ -1544,5 +1550,6 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
