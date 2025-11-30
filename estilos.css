@@ -362,3 +362,74 @@ footer {
         display: none;
     }
 }
+
+/* =========================
+    PÁGINA GALERÍA
+========================= */
+
+.galeria-fotos {
+    text-align: center;
+    /* Usa la clase 'section' de tu CSS general para el estilo del contenedor */
+}
+
+/* Contenedor Grid */
+.grid-contenedor {
+    display: grid;
+    /* Define la cuadrícula: columnas de tamaño mínimo 250px que se ajustan automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px; /* Espacio entre las fotos */
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Ítem de la galería (cada foto) */
+.grid-item {
+    position: relative; /* Necesario para posicionar el 'overlay' */
+    overflow: hidden; /* Oculta el borde de las imágenes si exceden */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.05); /* Efecto de acercamiento al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 250px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay (para mostrar un texto o efecto al pasar el ratón) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 120, 215, 0.7); /* Azul con transparencia */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.grid-item:hover .overlay {
+    opacity: 1; /* Se vuelve visible al pasar el ratón */
+}
+
+/* Opcional: Estilo responsivo para pantallas muy pequeñas */
+@media (max-width: 500px) {
+    .grid-contenedor {
+        grid-template-columns: 1fr; /* Una columna en móviles muy pequeños */
+    }
+}
