@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Prueba</title>
+    <link rel="stylesheet" href="estilos.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Prueba de Conocimientos Web</h1>
+
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-formulario prueba-test">
+            <h2>Evalúa tus conocimientos de HTML y CSS</h2>
+            <p>Responde las siguientes 3 preguntas y presiona "Finalizar Prueba" para ver tu resultado.</p>
+            
+            <form id="formularioPrueba" class="formulario">
+                
+                <fieldset>
+                    <legend>1. ¿Qué etiqueta se usa para crear un enlace de hipertexto?</legend>
+                    <div class="opciones-radio">
+                        <input type="radio" id="p1a" name="pregunta1" value="p" required>
+                        <label for="p1a">&lt;p&gt;</label>
+                        
+                        <input type="radio" id="p1b" name="pregunta1" value="a">
+                        <label for="p1b">&lt;a&gt;</label>
+                        
+                        <input type="radio" id="p1c" name="pregunta1" value="h1">
+                        <label for="p1c">&lt;h1&gt;</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. ¿Cuál propiedad CSS se usa para cambiar el color de fondo?</legend>
+                    <div class="opciones-radio">
+                        <input type="radio" id="p2a" name="pregunta2" value="color" required>
+                        <label for="p2a">color</label>
+                        
+                        <input type="radio" id="p2b" name="pregunta2" value="bg">
+                        <label for="p2b">background-color</label>
+                        
+                        <input type="radio" id="p2c" name="pregunta2" value="text">
+                        <label for="p2c">text-color</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. ¿Qué palabra clave se usa para declarar una variable que no cambiará?</legend>
+                    <div class="opciones-radio">
+                        <input type="radio" id="p3a" name="pregunta3" value="let" required>
+                        <label for="p3a">let</label>
+                        
+                        <input type="radio" id="p3b" name="pregunta3" value="var">
+                        <label for="p3b">var</label>
+                        
+                        <input type="radio" id="p3c" name="pregunta3" value="const">
+                        <label for="p3c">const</label>
+                    </div>
+                </fieldset>
+
+                <div class="botones">
+                    <button type="submit" class="btn"><i class="fa-solid fa-check"></i> Finalizar Prueba</button>
+                    <button type="reset" class="btn btn-secundario"><i class="fa-solid fa-rotate-left"></i> Limpiar Respuestas</button>
+                </div>
+            </form>
+
+            <div id="resultadoPrueba" class="resultado-box" style="display:none; text-align: center;">
+                <h3>Resultado de la Prueba:</h3>
+                <p id="puntuacion"></p>
+                <p id="mensaje"></p>
+            </div>
+
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="../Bienvenida.js"></script>
+    <script src="../Menu.js"></script>
+    <script src="../js/formulario_prueba.js"></script> </body>
+</html>
