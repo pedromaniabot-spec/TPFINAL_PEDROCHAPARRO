@@ -1,16 +1,17 @@
 
-const itemsConSubmenu = document.querySelectorAll('.menu-dropdown li.has-submenu');
+cdocument.addEventListener('DOMContentLoaded', () => {
+    const hamburguesa = document.querySelector('.hamburguesa');
+    const menu = document.querySelector('nav.menu');
 
-itemsConSubmenu.forEach(item => {
-    // Escucha click para dispositivos móviles
-    item.addEventListener('click', (e) => {
-        // Evita que el click haga scroll o siga el link
-        e.preventDefault();
-        
-        // Alterna la clase 'activo' para mostrar/ocultar el submenú
-        const submenu = item.querySelector('.submenu');
-        if(submenu) {
-            submenu.classList.toggle('activo');
-        }
+    hamburguesa.addEventListener('click', () => {
+        menu.classList.toggle('activo');
+    });
+
+    // Submenús móviles
+    document.querySelectorAll('nav.menu .submenu > a').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita el enlace
+            item.parentElement.classList.toggle('activo');
+        });
     });
 });
