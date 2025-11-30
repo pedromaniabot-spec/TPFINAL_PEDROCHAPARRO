@@ -259,7 +259,7 @@ footer {
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* ===== MENÚ HAMBURGUESA (MÓVIL) ===== */
+/* ===== MENÚ HAMBURGUESA (MÓVIL) CORREGIDO ===== */
 .hamburguesa {
     position: absolute;
     right: 20px;
@@ -269,29 +269,39 @@ footer {
     font-size: 28px;
     color: white;
     cursor: pointer;
-    display: none;
+    display: none; /* Se mostrará en móviles con media query */
+    z-index: 1001;
 }
 
 /* Menú oculto por defecto en móvil */
 nav.menu {
     background-color: #005cab;
-    display: none;
+    display: none; /* Oculto por defecto */
     width: 100%;
+    flex-direction: column;
+}
+
+/* Mostrar menú cuando se activa (agregando clase 'activo' desde JS) */
+nav.menu.activo {
+    display: flex;
 }
 
 nav.menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 nav.menu ul li {
     border-bottom: 1px solid rgba(255,255,255,0.15);
+    position: relative;
 }
 
 nav.menu ul li a {
     display: block;
-    padding: 12px;
+    padding: 12px 20px;
     color: white;
     text-decoration: none;
 }
@@ -303,29 +313,27 @@ nav.menu ul li a:hover {
 /* Submenú móvil */
 nav.menu .submenu ul {
     display: none;
+    flex-direction: column;
     background-color: #003d6b;
 }
 
-/* Mostrar submenú móvil cuando se presiona */
 nav.menu .submenu.activo ul {
-    display: block;
+    display: flex;
 }
 
-/* ===== MENÚ EN PC ===== */
+/* ===== MEDIA QUERY PARA PC ===== */
 @media (min-width: 769px) {
 
-    /* Mostrar menú */
+    .hamburguesa {
+        display: none !important;
+    }
+
     nav.menu {
         display: block !important;
         background-color: #005cab;
         position: static;
     }
 
-    .hamburguesa {
-        display: none !important;
-    }
-
-    /* Menú horizontal */
     nav.menu ul {
         display: flex;
         justify-content: center;
@@ -353,12 +361,30 @@ nav.menu .submenu.activo ul {
         padding: 0;
         border-radius: 8px;
         z-index: 999;
+        flex-direction: column;
     }
 
     nav.menu .submenu:hover ul {
-        display: block;
+        display: flex;
     }
 }
+
+/* ===== MEDIA QUERY PARA MÓVIL ===== */
+@media (max-width: 768px) {
+    .hamburguesa {
+        display: block;
+    }
+
+    nav.menu ul {
+        flex-direction: column;
+    }
+
+    nav.menu .submenu ul {
+        width: 100%;
+        padding-left: 15px;
+    }
+}
+
 
 /* =========================
     PÁGINA GALERÍA
@@ -1540,4 +1566,5 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
