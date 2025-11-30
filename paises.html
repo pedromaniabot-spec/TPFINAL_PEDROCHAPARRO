@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Países (REST Countries)</title>
+    <link rel="stylesheet" href="estilos.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Explorador de Países</h1>
+
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-api paises-buscador">
+            <h2>Datos Geográficos y Demográficos</h2>
+            <p>Muestra información detallada sobre países del mundo usando la API REST Countries.</p>
+            
+            <div class="opciones-busqueda">
+                <input type="text" id="inputPais" placeholder="Buscar por nombre de país (ej: Paraguay)">
+                <button id="btnBuscarPais" class="btn"><i class="fa-solid fa-earth-americas"></i> Buscar País</button>
+            </div>
+            
+            <button id="btnCargarTodos" class="btn btn-secundario"><i class="fa-solid fa-list-ul"></i> Cargar Todos los Países</button>
+            
+            <div id="contenedorPaises" class="paises-grid">
+                </div>
+
+            <div id="mensajeErrorPaises" class="error-mensaje" style="display:none;">
+                No se encontró el país o hubo un error al cargar los datos.
+            </div>
+
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="../Bienvenida.js"></script>
+    <script src="../Menu.js"></script>
+    <script src="apis.js"></script> </body>
+</html>
