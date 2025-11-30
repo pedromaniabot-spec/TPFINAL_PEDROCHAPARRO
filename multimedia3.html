@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia - Video MP4 y Audio MP3</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="Bienvenido a la Seccion Nativa">Multimedia Nativa (Video y Audio)</h1>
+        
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-multimedia">
+            <h2>Videos MP4 (Etiqueta &lt;video&gt;)</h2>
+            <p>Archivos de video alojados localmente con controles de reproducción estándar.</p>
+            
+            <div class="video-container">
+                
+                <div class="media-item">
+                    <h3>Video de Introducción (MP4)</h3>
+                    <video controls muted poster="../statics/images/poster_video.jpg">
+                        <source src="../statics/video/video_ejemplo.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                    <p>Demostración de un video incrustado con la etiqueta de video nativa de HTML5. El atributo 'poster' permite mostrar una imagen previa.</p>
+                </div>
+
+            </div>
+            
+            <hr class="separador">
+            
+            <h2>Audios MP3 (Etiqueta &lt;audio&gt;)</h2>
+            <p>Archivos de audio alojados localmente con controles de reproducción.</p>
+            
+            <div class="audio-container">
+
+                <div class="media-item">
+                    <h3>Música de Fondo (MP3)</h3>
+                    <audio controls loop>
+                        <source src="../statics/audio/audio_musica.mp3" type="audio/mp3">
+                        Tu navegador no soporta la etiqueta de audio.
+                    </audio>
+                    <p>Pista de audio con el atributo 'loop' activado para reproducción continua.</p>
