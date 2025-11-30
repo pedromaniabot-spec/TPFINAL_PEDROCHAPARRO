@@ -223,3 +223,66 @@ footer {
     0% { transform: scale(0.7); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
+
+/* ---------- TABLA DE PRODUCTOS ---------- */
+
+.tabla-contenedor {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    animation: aparecer 1s ease-in-out;
+}
+
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabla-productos th {
+    background: #0078d7;
+    color: white;
+    padding: 12px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    animation: mover 1.2s ease-in-out infinite alternate;
+}
+
+.tabla-productos td {
+    padding: 12px;
+    background: #fdfdfd;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+.tabla-productos tr:hover td {
+    background: #f0f8ff;
+}
+
+/* Estados */
+.ok {
+    color: green;
+    font-weight: bold;
+}
+
+.alerta {
+    color: orange;
+    font-weight: bold;
+}
+
+.no {
+    color: red;
+    font-weight: bold;
+}
+
+/* Animación encabezados */
+@keyframes mover {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(5px);
+    }
+}
