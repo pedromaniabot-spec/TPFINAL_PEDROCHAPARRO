@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios Interactivos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Sección de Comentarios</h1>
+        
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-comentarios">
+            <h2>Artículo: La Importancia de las Rutas Relativas</h2>
+            <p class="articulo-resumen">Las rutas relativas (`../`) son esenciales en el desarrollo web para asegurar que los enlaces funcionen independientemente de dónde se aloje el sitio. A continuación, puedes ver los comentarios de la comunidad sobre este tema.</p>
+            
+            <hr class="separador">
+            
+            <h3>3 Comentarios</h3>
+
+            <article class="comentario-card">
+                <div class="comentario-header">
+                    <img src="../statics/images/avatar_c1.jpg" alt="Avatar Usuario 1" class="avatar-comentario">
+                    <span class="username">@Profe_Rutas</span>
+                    <span class="fecha">hace 3 horas</span>
+                </div>
+                <div class="comentario-body">
+                    <p>Totalmente de acuerdo. Un error común es olvidar que desde una subcarpeta, necesitas subir un nivel. ¡Excelente recordatorio!</p>
+                </div>
+                <div class="comentario-actions">
+                    <button class="btn-like" data-post="c1">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="like-counter" id="likes-c1">12</span> Likes
+                    </button>
+                    <button class="btn-reply"><i class="fa-solid fa-reply"></i> Responder</button>
+                </div>
+            </article>
+
+            <article class="comentario-card">
+                <div class="comentario-header">
+                    <img src="../statics/images/avatar_c2.jpg" alt="Avatar Usuario 2" class="avatar-comentario">
+                    <span class="username">@Novato_Web</span>
+                    <span class="fecha">hace 1 hora</span>
+                </div>
+                <div class="comentario-body">
+                    <p>Siempre me confundo con eso, pero el ejemplo de `../` me ha ayudado mucho a entenderlo. Gracias por la explicación simple.</p>
+                </div>
+                <div class="comentario-actions">
+                    <button class="btn-like" data-post="c2">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="like-counter" id="likes-c2">5</span> Likes
+                    </button>
+                    <button class="btn-reply"><i class="fa-solid fa-reply"></i> Responder</button>
+                </div>
+            </article>
+
+            <article class="comentario-card">
+                <div class="comentario-header">
+                    <img src="../statics/images/avatar_c3.jpg" alt="Avatar Usuario 3" class="avatar-comentario">
+                    <span class="username">@Experto_SEO</span>
+                    <span class="fecha">hace 30 minutos</span>
+                </div>
+                <div class="comentario-body">
+                    <p>Además de la funcionalidad, las rutas relativas son mejores para la portabilidad del proyecto. ¡Buen punto a destacar!</p>
+                </div>
+                <div class="comentario-actions">
+                    <button class="btn-like" data-post="c3">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="like-counter" id="likes-c3">20</span> Likes
+                    </button>
+                    <button class="btn-reply"><i class="fa-solid fa-reply"></i> Responder</button>
+                </div>
+            </article>
+            
+            <hr class="separador">
+
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="Bienvenida.js"></script>
+    <script src="Menu.js"></script>
+    <script src="redsocial.js"></script> 
+
+</body>
+</html>
