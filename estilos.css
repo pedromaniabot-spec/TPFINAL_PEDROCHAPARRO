@@ -259,7 +259,9 @@ footer {
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* ===== MENÚ HAMBURGUESA (MÓVIL) CORREGIDO ===== */
+/* =========================
+   MENÚ HAMBURGUESA
+========================= */
 .hamburguesa {
     position: absolute;
     right: 20px;
@@ -269,119 +271,51 @@ footer {
     font-size: 28px;
     color: white;
     cursor: pointer;
-    display: none; /* Se mostrará en móviles con media query */
-    z-index: 1001;
+    display: none;
 }
 
-/* Menú oculto por defecto en móvil */
-nav.menu {
+.menu {
     background-color: #005cab;
-    display: block; 
-    width: 100%;
-    flex-direction: column;
+    display: none;
 }
 
-/* Mostrar menú cuando se activa (agregando clase 'activo' desde JS) */
-nav.menu.activo {
-    display: flex;
-}
-
-nav.menu ul {
+.menu ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
 }
 
-nav.menu ul li {
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    position: relative;
+.menu ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-nav.menu ul li a {
+.menu ul li a {
     display: block;
-    padding: 12px 20px;
+    padding: 12px;
     color: white;
     text-decoration: none;
 }
 
-nav.menu ul li a:hover {
+.menu ul li a:hover {
     background-color: #004a87;
 }
 
-/* Submenú móvil */
-nav.menu .submenu ul {
+.submenu ul {
     display: none;
-    flex-direction: column;
     background-color: #003d6b;
 }
 
-nav.menu .submenu.activo ul {
-    display: flex;
+.submenu:hover ul {
+    display: block;
 }
 
-/* ===== MEDIA QUERY PARA PC ===== */
-@media (min-width: 769px) {
-
-    .hamburguesa {
-        display: block !important;
-    }
-
-    nav.menu {
-        display: block !important;
-        background-color: #005cab;
-        position: static;
-    }
-
-    nav.menu ul {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    nav.menu ul li {
-        border: none;
-        position: relative;
-    }
-
-    nav.menu ul li a {
-        padding: 12px 16px;
-        font-weight: bold;
-    }
-
-    /* Submenú PC */
-    nav.menu .submenu ul {
-        display: block;
-        position: absolute;
-        top: 42px;
-        left: 0;
-        width: 180px;
-        background-color: #003d6b;
-        padding: 0;
-        border-radius: 8px;
-        z-index: 999;
-        flex-direction: column;
-    }
-
-    nav.menu .submenu:hover ul {
-        display: flex;
-    }
-}
-
-/* ===== MEDIA QUERY PARA MÓVIL ===== */
+/* Responsive */
 @media (max-width: 768px) {
     .hamburguesa {
         display: block;
     }
 
-    nav.menu ul {
-        flex-direction: column;
-    }
-
-    nav.menu .submenu ul {
+    nav {
         width: 100%;
-        padding-left: 15px;
     }
 }
 
@@ -1566,6 +1500,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
