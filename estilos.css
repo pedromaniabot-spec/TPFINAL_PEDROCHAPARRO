@@ -286,3 +286,34 @@ footer {
         transform: translateY(5px);
     }
 }
+
+/* ----- Miembros del banco ----- */
+
+.miembros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.miembro {
+    background: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: aparecer 0.8s ease;
+}
+
+.miembro img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.miembro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
