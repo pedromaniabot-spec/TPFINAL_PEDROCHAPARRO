@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias del Desarrollo Web</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Noticias de Última Hora</h1>
+        
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-noticias">
+            <h2>Tecnología y Novedades</h2>
+            <p>Mantente al día con las últimas tendencias en programación y desarrollo web.</p>
+            
+            <article class="noticia-card" data-noticia-id="n1">
+                <div class="noticia-imagen">
+                    <img src="../statics/images/noticia_ia.jpg" alt="Noticia 1: Avance IA">
+                </div>
+                <div class="noticia-contenido">
+                    <h3>Avance Histórico: La IA Mejora el Rendimiento de JavaScript</h3>
+                    <p class="resumen">Científicos de Google han presentado un nuevo modelo de IA capaz de optimizar automáticamente el código JavaScript, logrando una reducción del 15% en los tiempos de carga.</p>
+                    <a href="#" class="leer-mas">Leer más...</a>
+                    <div class="noticia-acciones">
+                        <button class="btn-like" data-post="n1">
+                            <i class="fa-regular fa-heart"></i>
+                            <span class="like-counter" id="likes-n1">58</span> Likes
+                        </button>
+                        <span class="fecha-publicacion"><i class="fa-regular fa-calendar-days"></i> 10 Nov 2025</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="noticia-card" data-noticia-id="n2">
+                <div class="noticia-imagen">
