@@ -1320,3 +1320,88 @@ document.addEventListener('DOMContentLoaded', () => {
         border-bottom: none;
     }
 }
+
+/* =========================
+    PÁGINA MENÚ 2 (LATERAL / SIDEBAR)
+========================= */
+
+/* --- Estructura Principal con CSS Grid --- */
+.grid-principal {
+    display: grid;
+    /* Define dos columnas: la primera de ancho fijo (250px) y la segunda que ocupa el resto (1fr) */
+    grid-template-columns: 250px 1fr; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- Estilos del Menú Lateral (Sidebar) --- */
+.menu-lateral {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    height: fit-content; /* Se ajusta a la altura de su contenido */
+    position: sticky; /* Hace que el menú se mantenga visible al hacer scroll */
+    top: 20px; /* Distancia desde la parte superior de la ventana */
+}
+
+.menu-lateral h3 {
+    color: #0078d7;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.menu-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-sidebar li a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 4px;
+}
+
+.menu-sidebar li a:hover {
+    background-color: #0078d7;
+    color: white;
+    padding-left: 15px;
+}
+
+.menu-sidebar li a i {
+    margin-right: 10px;
+}
+
+/* --- Estilos del Contenido Principal --- */
+.contenido-principal {
+    padding: 10px 0;
+}
+
+.contenido-principal article {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 5px solid #0078d7;
+    border-radius: 5px;
+}
+
+/* --- Responsividad para móviles (columna única) --- */
+@media (max-width: 900px) {
+    .grid-principal {
+        /* En pantallas pequeñas, se convierte en una sola columna */
+        grid-template-columns: 1fr; 
+        gap: 0;
+    }
+
+    .menu-lateral {
+        position: static; /* Deshabilita el sticky en móvil */
+        margin-bottom: 20px;
+    }
+}
