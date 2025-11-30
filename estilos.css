@@ -1087,3 +1087,79 @@ document.addEventListener('DOMContentLoaded', () => {
     font-weight: bold;
     margin-left: 5px;
 }
+
+/* =========================
+    PÁGINA COMENTARIOS
+========================= */
+
+.contenedor-comentarios {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.articulo-resumen {
+    font-style: italic;
+    color: #555;
+    padding-bottom: 15px;
+}
+
+.comentario-card {
+    background: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.comentario-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar-comentario {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.comentario-header .username {
+    font-weight: bold;
+    color: #0078d7;
+    margin-right: 15px;
+}
+
+.comentario-header .fecha {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.comentario-body p {
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.comentario-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-reply {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.btn-reply:hover {
+    color: #0078d7;
+}
+
+/* Reutilizamos los estilos .btn-like y .liked de la sección Red Social */
