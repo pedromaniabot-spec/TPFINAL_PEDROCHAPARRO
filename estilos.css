@@ -696,4 +696,73 @@ legend {
     font-size: 1.2rem;
 }
 
-/* Asegúrate de que tu .error-mensaje ya tenga estilos, como los definidos para formularios */
+/* =========================
+    PÁGINA PAÍSES (APIs)
+========================= */
+
+.paises-buscador {
+    text-align: center;
+}
+
+.opciones-busqueda {
+    display: flex;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.opciones-busqueda input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#btnCargarTodos {
+    margin-bottom: 25px;
+}
+
+/* Contenedor Grid para las tarjetas */
+.paises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.pais-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pais-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pais-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 3px solid #0078d7;
+}
+
+.card-info {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.card-info h3 {
+    margin-top: 0;
+    color: #0078d7;
+    font-size: 1.4rem;
+}
+
+.card-info p {
+    margin: 5px 0;
+}
+
