@@ -259,49 +259,103 @@ footer {
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* =========================================
-   MENÚ DESPLEGADO EN PC (ARREGLADO)
-   ========================================= */
+/* ===== MENÚ HAMBURGUESA (MÓVIL) ===== */
+.hamburguesa {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Menú oculto por defecto en móvil */
+nav.menu {
+    background-color: #005cab;
+    display: none;
+    width: 100%;
+}
+
+nav.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav.menu ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+nav.menu ul li a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+nav.menu ul li a:hover {
+    background-color: #004a87;
+}
+
+/* Submenú móvil */
+nav.menu .submenu ul {
+    display: none;
+    background-color: #003d6b;
+}
+
+/* Mostrar submenú móvil cuando se presiona */
+nav.menu .submenu.activo ul {
+    display: block;
+}
+
+/* ===== MENÚ EN PC ===== */
 @media (min-width: 769px) {
 
-    /* FORZAMOS VISIBILIDAD */
+    /* Mostrar menú */
     nav.menu {
         display: block !important;
+        background-color: #005cab;
+        position: static;
     }
 
     .hamburguesa {
-        display: none;
+        display: none !important;
     }
 
     /* Menú horizontal */
-    .menu ul {
+    nav.menu ul {
         display: flex;
         justify-content: center;
         gap: 20px;
     }
 
-    .menu ul li {
+    nav.menu ul li {
         border: none;
         position: relative;
     }
 
-    .menu ul li a {
-        padding: 10px 15px;
+    nav.menu ul li a {
+        padding: 12px 16px;
+        font-weight: bold;
     }
 
-    /* Submenú aparece al pasar el mouse */
-    .menu ul li ul {
+    /* Submenú PC */
+    nav.menu .submenu ul {
+        display: none;
         position: absolute;
-        top: 40px;
+        top: 42px;
         left: 0;
         width: 180px;
-        display: none;
-        border-radius: 8px;
-        background-color: #005cab;
+        background-color: #003d6b;
         padding: 0;
+        border-radius: 8px;
+        z-index: 999;
     }
 
-    .menu ul li:hover ul {
+    nav.menu .submenu:hover ul {
         display: block;
     }
 }
@@ -1486,3 +1540,4 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
