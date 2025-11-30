@@ -1,4 +1,3 @@
-
 cdocument.addEventListener('DOMContentLoaded', () => {
     const hamburguesa = document.querySelector('.hamburguesa');
     const menu = document.querySelector('nav.menu');
