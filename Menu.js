@@ -1,16 +1,6 @@
-cdocument.addEventListener('DOMContentLoaded', () => {
-    const hamburguesa = document.querySelector('.hamburguesa');
-    const menu = document.querySelector('nav.menu');
+const btnMenu = document.getElementById("btnMenu");
+const menu = document.getElementById("menu");
 
-    hamburguesa.addEventListener('click', () => {
-        menu.classList.toggle('activo');
-    });
-
-    // Submenús móviles
-    document.querySelectorAll('nav.menu .submenu > a').forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault(); // Evita el enlace
-            item.parentElement.classList.toggle('activo');
-        });
-    });
+btnMenu.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
 });
