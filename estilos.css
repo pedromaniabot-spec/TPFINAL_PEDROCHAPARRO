@@ -317,3 +317,48 @@ footer {
     transform: translateY(-8px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
+
+/* Menú visible en PC */
+@media (min-width: 769px) {
+    #menu {
+        display: block !important;
+        position: static;
+        background-color: transparent;
+    }
+
+    #menu ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    #menu ul li {
+        border: none;
+        position: relative;
+    }
+
+    #menu ul li a {
+        padding: 10px 15px;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Submenús */
+    #menu .submenu ul {
+        display: none;
+        position: absolute;
+        top: 40px;
+        background: #005cab;
+        padding: 0;
+        width: 180px;
+        border-radius: 8px;
+    }
+
+    #menu .submenu:hover ul {
+        display: block;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+}
