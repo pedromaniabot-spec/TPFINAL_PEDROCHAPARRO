@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia - Mapas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Integración de Mapas Geográficos</h1>
+        
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-multimedia mapa-seccion">
+            <h2>Nuestra Ubicación (Mapa de Ejemplo)</h2>
+            <p>Este mapa está incrustado utilizando un iframe de Google Maps.</p>
+            
+            <div class="mapa-contenedor">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.300588825227!2d-57.51479862414774!3d-25.399580034680877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9452b57cc97d74ff%3A0x868b8160a28f805a!2sSan%20Lorenzo%2C%20Paraguay!5e0!3m2!1ses-419!2spy!4v1700000000000!5m2!1ses-419!2spy" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de San Lorenzo, Paraguay">
+                </iframe>
+            </div>
+
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="Bienvenida.js"></script>
+    <script src="Menu.js"></script>
+
+</body>
+</html>
