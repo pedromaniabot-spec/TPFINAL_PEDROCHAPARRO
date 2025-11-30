@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Menú 3 - Desplegable CSS</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="tituloBienvenida">Menú Desplegable (Dropdown) con Puro CSS</h1>
+        
+        <button class="hamburguesa" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu" id="menu">
+            </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-menu-ejemplo">
+            <h2>Ejemplo de Menú con Submenús Anidados</h2>
+            <p>Este menú avanzado usa únicamente CSS (propiedad `display` y `:hover`) para mostrar los elementos desplegables.</p>
+            
+            <nav class="menu-ejemplo menu-dropdown">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                    
+                    <li class="has-submenu">
+                        <a href="#">Productos <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">Electrónica</a></li>
+                            <li class="has-submenu">
+                                <a href="#">Ropa <i class="fa-solid fa-caret-right"></i></a>
+                                <ul class="submenu-secundario">
+                                    <li><a href="#">Verano</a></li>
+                                    <li><a href="#">Invierno</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Hogar</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="has-submenu">
+                        <a href="#">Servicios <i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">Soporte Técnico</a></li>
+                            <li><a href="#">Consultoría</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="contenido-muestra">
+                <h3>Diseño Avanzado de Navegación</h3>
+                <p>La clave para este menú es que los submenús anidados están ocultos por defecto (<code>display: none</code>) y se revelan cuando el ratón pasa por encima del elemento padre (<code>li:hover > ul</code>).</p>
+            </div>
+
+            <section class="botones">
+                <a href="../index.html" class="btn boton-inicio">
+                    <i class="fa-solid fa-house"></i> Volver al Inicio
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="Bienvenida.js"></script>
+    <script src="Menu.js"></script>
+</body>
+</html>
