@@ -610,3 +610,21 @@ legend {
 .btn-secundario:hover {
     background: #5a6268;
 }
+
+/* Estilos para el contenedor de formularios (usado también en Matriculación) */
+.contenedor-formulario {
+    /* ... (de la respuesta anterior: max-width, margin, padding, background, box-shadow) ... */
+}
+
+/* Estilo para el box de resultado */
+.resultado-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #0078d7;
+    border-radius: 5px;
+    background-color: #e6f0ff;
+}
+
+.resultado-box h3 {
+    color: #0078d7;
+}
