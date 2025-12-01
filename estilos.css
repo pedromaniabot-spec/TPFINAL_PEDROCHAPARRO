@@ -1705,6 +1705,48 @@ document.addEventListener('DOMContentLoaded', () => {
     background-color: #2c2c2c;
 }
 
+/* ===== Ajuste para separar la barra de scroll del menú ===== */
+
+/* 1) Añadir espacio inferior al contenedor del menú */
+nav.menu#menu {
+    padding-bottom: 18px !important; /* espacio extra debajo del UL */
+}
+
+/* 2) Dar padding-bottom al UL (espacio interior) para empujar la scrollbar hacia abajo */
+#menu > ul {
+    padding: 6px 12px 18px 12px !important; /* top right bottom left */
+    box-sizing: border-box;
+}
+
+/* 3) Asegurar que el UL no ocupe toda la altura del nav (centrar verticalmente el contenido) */
+nav.menu#menu > ul {
+    align-items: center;     /* centra el contenido si cambia la altura */
+    min-height: 44px;        /* altura mínima de la fila del menú (ajusta a tu gusto) */
+}
+
+/* 4) Mejor separación visual: sombra y borde redondeado al UL */
+#menu > ul {
+    background: transparent; /* si quieres otro fondo ponlo aquí */
+    border-radius: 6px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset; /* sutil */
+}
+
+/* 5) (Opcional) Si el navegador sigue mostrando la barra muy pegada, fuerza margen inferior del UL */
+#menu > ul {
+    margin-bottom: 8px !important;
+}
+
+/* 6) Scrollbar personalizado (opcional, para que se vea más separado) */
+#menu > ul::-webkit-scrollbar {
+    height: 8px; /* un poco más alto para mejor visibilidad */
+}
+#menu > ul::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    border: 2px solid transparent; /* deja espacio visual alrededor */
+    background-clip: padding-box;
+}
+
 
 
 
