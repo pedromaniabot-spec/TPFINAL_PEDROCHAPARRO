@@ -262,145 +262,63 @@ footer {
 
 
 
-/* =========================================
-   ESTILOS BASE (MÓVIL) - OCULTAR POR DEFECTO
-   ========================================= */
-
-/* Mostrar el botón hamburguesa en móvil */
+/* =========================
+   MENÚ HAMBURGUESA
+========================= */
 .hamburguesa {
-    display: block;
-    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
     background: none;
     border: none;
-    color: white; 
-    font-size: 24px;
+    font-size: 28px;
+    color: white;
     cursor: pointer;
+    display: none;
 }
 
-/* Ocultar el menú por defecto en móvil */
-nav.menu#menu {
-    display: none; /* <--- CLAVE: Oculto por defecto en móvil */
-    position: absolute;
-    top: 60px; 
-    right: 0;
-    width: 100%;
-    max-width: 300px;
+.menu {
     background-color: #005cab;
-    z-index: 1000;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    display: none;
 }
 
-/* Clase que se añade con JS para MOSTRAR el menú en móvil */
-.menu-visible {
-    display: block !important;
-}
-
-/* Estilos de la lista principal */
-#menu > ul { /* Selector más específico para el UL de primer nivel */
+.menu ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
-/* Estilos de los elementos de la lista de primer nivel */
-#menu > ul > li { /* Selector muy específico para TODOS los LI de primer nivel */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+.menu ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Estilos para los enlaces principales en móvil */
-#menu > ul > li > a {
+.menu ul li a {
     display: block;
-    padding: 15px 20px;
+    padding: 12px;
     color: white;
-    font-weight: bold;
     text-decoration: none;
 }
 
-/* Submenús en móvil: ocultos por defecto */
-#menu .submenu ul {
-    display: none;
-    background-color: #0078d7;
-    padding-left: 10px;
+.menu ul li a:hover {
+    background-color: #004a87;
 }
 
-/* Estilo para mostrar el submenú cuando se le añade la clase 'activo' con JS */
-#menu .submenu.activo > ul {
+.submenu ul {
+    display: none;
+    background-color: #003d6b;
+}
+
+.submenu:hover ul {
     display: block;
 }
 
----
-## 💻 MENÚ DESPLEGADO EN PC (MIN-WIDTH: 769PX)
-
-@media (min-width: 769px) {
-
-    /* FORZAMOS VISIBILIDAD DE TODO EL CONTENEDOR DEL MENÚ */
-    nav.menu#menu {
-        display: block !important;
-        position: static !important;
-        background-color: #005cab !important;
-        width: 100%;
-        max-width: none;
-        box-shadow: none;
-    }
-
-    /* OCULTAMOS HAMBURGUESA EN PC */
+/* Responsive */
+@media (max-width: 768px) {
     .hamburguesa {
-        display: none !important;
+        display: block;
     }
 
-    /* Estilos para la lista principal en formato FLEX */
-    #menu > ul {
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* ESTA ES LA REGLA CRÍTICA: Asegura que todos los LI de primer nivel se muestren */
-    #menu > ul > li {
-        list-style: none;
-        position: relative;
-        border: none;
-        display: block !important; /* <--- ¡ESTO LO ARREGLARÁ! */
-    }
-
-    /* Estilos para los enlaces principales */
-    #menu > ul > li > a {
-        padding: 12px 18px;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    /* SUBMENÚS EN PC (ocultos por defecto, visibles al pasar el mouse) */
-    #menu .submenu ul {
-        display: none; 
-        position: absolute;
-        top: 45px;
-        left: 0;
-        background: #0078d7;
-        padding: 0;
-        margin: 0;
-        width: 180px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        z-index: 999;
-    }
-
-    #menu .submenu:hover > ul {
-        display: block; /* Visibilidad al hacer HOVER en PC */
-    }
-
-    #menu .submenu ul li a {
-        padding: 10px 15px;
-        color: white;
-    }
-    
-    /* Limpieza: Aseguramos que los submenús no tengan la clase 'activo' en PC (porque usamos hover) */
-    #menu .submenu.activo > ul {
-        display: none;
+    nav {
+        width: 100%;
     }
 }
 
@@ -1584,5 +1502,6 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
