@@ -260,65 +260,113 @@ footer {
 }
 
 
-/* ------------------------------------------
-   RESET BÁSICO PARA EL MENÚ
------------------------------------------- */
-#menu ul, #menu li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-#menu a {
-    text-decoration: none;
-    color: white;
-}
+/* =========================
+   MENÚ PRINCIPAL
+========================= */
 
-/* ------------------------------------------
-   ESTILOS BASE / MÓVIL
------------------------------------------- */
-.hamburguesa {
-    display: block;
-    padding: 8px;
-    background: none;
-    border: none;
-    color: white; 
-    font-size: 22px;
-    cursor: pointer;
-}
-
-/* Ocultar el menú por defecto en móvil */
+/* Contenedor general del menú */
 nav.menu#menu {
-    display: none; /* Oculto por defecto en móvil */
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 90%; /* Menú más estrecho en móvil */
-    max-width: 280px;
+    width: 100%;
     background-color: #005cab;
-    z-index: 1000;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
-/* Clase que se añade con JS para mostrar el menú en móvil */
-.menu-visible {
-    display: block !important;
+/* Lista principal */
+#menu > ul {
+    display: flex;
+    gap: 12px;             /* Espacio entre ítems */
+    padding: 0 10px;       /* Padding lateral */
+    margin: 0;
+    list-style: none;
+    overflow-x: auto;      /* Scroll horizontal si es necesario */
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.5) transparent;
 }
 
-/* Estilos de los elementos de la lista en móvil */
+/* Scrollbar Chrome/Edge */
+#menu > ul::-webkit-scrollbar {
+    height: 6px;
+}
+#menu > ul::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.5);
+    border-radius: 3px;
+}
+#menu > ul::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Items de menú */
 #menu > ul > li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    flex: 0 0 auto; /* Evita que los ítems se encojan */
+    position: relative;
 }
 
-/* Submenús en móvil: ocultos por defecto */
-#menu .submenu ul {
-    display: none;
-    background-color: #0078d7;
-    padding-left: 10px;
-}
-
-/* Estilo para mostrar el submenú cuando se le añade la clase 'activo' con JS */
-.submenu.activo > ul {
+/* Enlaces principales */
+#menu > ul > li > a {
     display: block;
+    padding: 8px 14px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+/* Hover de los enlaces */
+#menu > ul > li > a:hover {
+    background-color: #0078d7;
+    border-radius: 4px;
+}
+
+/* Submenú / dropdown */
+#menu > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0078d7;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    z-index: 999;
+}
+
+/* Ítems de submenú */
+#menu > ul > li > ul > li > a {
+    padding: 8px 12px;
+    display: block;
+}
+
+/* Hover submenú */
+#menu > ul > li:hover > ul {
+    display: block;
+}
+
+/* Responsivo: móvil */
+@media (max-width: 768px) {
+    nav.menu#menu {
+        position: relative;
+    }
+
+    /* Ocultar lista principal, mostrar hamburguesa */
+    #menu > ul {
+        display: none;
+        flex-direction: column;
+        background-color: #005cab;
+        width: 100%;
+    }
+
+    /* Mostrar lista al hacer click en hamburguesa */
+    #menu > ul.active {
+        display: flex;
+    }
+
+    /* Enlaces en móvil */
+    #menu > ul > li > a {
+        padding: 12px;
+    }
 }
 
 /* ------------------------------------------
@@ -1609,6 +1657,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
