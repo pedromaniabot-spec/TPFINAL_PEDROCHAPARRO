@@ -263,29 +263,15 @@ footer {
 
 
 /* =========================
-   MENU HAMBURGUESA + DESPLEGABLE RESPONSIVE
+      MENÚ GENERAL
 ========================= */
-
 .menu {
     background-color: #005cab;
-    padding: 10px;
-    border-radius: 8px;
-    display: none; /* se mostrará solo en móvil */
+    display: none; /* Se oculta SOLO en móvil */
+    width: 100%;
 }
 
-.hamburguesa {
-    background: #0078d7;
-    color: white;
-    padding: 10px 15px;
-    font-size: 22px;
-    cursor: pointer;
-    border-radius: 8px;
-    display: block;
-    width: fit-content;
-    margin: 10px auto;
-}
-
-/* Items del menú */
+/* Estilos generales del menú */
 .menu ul {
     list-style: none;
     padding: 0;
@@ -293,77 +279,82 @@ footer {
 }
 
 .menu ul li {
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding: 10px;
-    text-align: center;
-    position: relative;
+    border-bottom: 1px solid #003f73;
 }
 
 .menu ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
     display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Submenús */
-.submenu ul {
+/* Submenús ocultos en móvil */
+.menu ul li ul {
     display: none;
+    background-color: #0078d7;
 }
 
 .submenu:hover ul {
     display: block;
-    background-color: #0078d7;
-    border-radius: 8px;
 }
 
-/* Menú visible en PC */
+/* Botón hamburguesa */
+.hamburguesa {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+/* =========================
+      MENÚ EN PC
+========================= */
 @media (min-width: 769px) {
 
-    /* FORZAMOS VISIBILIDAD EN PC */
-    nav.menu#menu {
+    /* FORZAMOS VISIBILIDAD */
+    nav.menu {
         display: block !important;
     }
 
-    #menu {
-        position: static;
-        background-color: transparent;
+    .hamburguesa {
+        display: none;
     }
 
-    #menu ul {
+    /* Menú horizontal */
+    .menu ul {
         display: flex;
         justify-content: center;
         gap: 20px;
     }
 
-    #menu ul li {
+    .menu ul li {
         border: none;
         position: relative;
     }
 
-    #menu ul li a {
+    .menu ul li a {
         padding: 10px 15px;
-        color: white;
-        font-weight: bold;
     }
 
-    /* Submenús */
-    #menu .submenu ul {
-        display: none;
+    /* Submenú aparece al pasar el mouse */
+    .menu ul li ul {
         position: absolute;
         top: 40px;
-        background: #005cab;
-        padding: 0;
+        left: 0;
         width: 180px;
-        border-radius: 8px;
-    }
-
-    #menu .submenu:hover ul {
-        display: block;
-    }
-
-    .hamburguesa {
         display: none;
+        border-radius: 8px;
+        background-color: #005cab;
+        padding: 0;
+    }
+
+    .menu ul li:hover ul {
+        display: block;
     }
 }
 
@@ -1549,6 +1540,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
