@@ -341,7 +341,7 @@ nav.menu#menu {
         box-shadow: none;
     }
 
-    /* Lista principal en horizontal con scroll */
+    /* Lista principal en horizontal con scroll suave */
     #menu > ul {
         display: flex !important;
         justify-content: flex-start;
@@ -349,8 +349,14 @@ nav.menu#menu {
         gap: 12px; 
         padding: 0 5px;
         overflow-x: auto;  /* Permite scroll horizontal */
+        scroll-behavior: smooth; /* Scroll suave */
         scrollbar-width: thin;
         scrollbar-color: rgba(255,255,255,0.5) transparent;
+    }
+
+    /* Centrar el scroll al cargar la página */
+    #menu > ul {
+        scroll-snap-type: x mandatory;
     }
 
     /* Estilo del scrollbar en Chrome/Edge */
@@ -375,9 +381,9 @@ nav.menu#menu {
 
     /* Enlaces principales */
     #menu > ul > li > a {
-        padding: 6px 10px;
+        padding: 6px 12px; /* Más ancho y cómodo */
         font-weight: bold;
-        font-size: 14px;
+        font-size: 16px; /* Más grande para visibilidad */
         white-space: nowrap; /* Evita que el texto se divida */
     }
 
@@ -388,25 +394,27 @@ nav.menu#menu {
         top: 100%;
         left: 0;
         background: #0078d7;
-        width: 180px; /* Puedes ajustar ancho si quieres */
+        width: 200px; /* Más ancho para mejor visibilidad */
         border-radius: 6px;
-        box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        box-shadow: 0 0 12px rgba(0,0,0,0.4);
         z-index: 999;
         overflow: visible; /* Para que no se corte */
-        padding: 10px 0; /* Espacio vertical para visualizar mejor */
+        padding: 15px 0; /* Más espacio vertical */
     }
 
     /* Opciones dentro del submenú */
     #menu .submenu ul li a {
         display: block;
-        padding: 10px 15px; /* Más alto y cómodo para click */
-        font-size: 14px;
+        padding: 12px 20px; /* Más alto y ancho */
+        font-size: 16px;   /* Fuente más grande */
         color: white;
+        transition: background 0.3s, color 0.3s; /* Suaviza hover */
     }
 
     /* Hover para cada opción del submenú */
     #menu .submenu ul li a:hover {
-        background-color: #0060a0;
+        background-color: #004a7c;
+        color: #fff;
     }
 
     /* Mostrar submenús al pasar el ratón */
@@ -1601,6 +1609,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
