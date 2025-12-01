@@ -262,7 +262,7 @@ footer {
 
 /* ------------------------------------------
    RESET BÁSICO PARA EL MENÚ
-   ------------------------------------------ */
+------------------------------------------ */
 #menu ul, #menu li {
     margin: 0;
     padding: 0;
@@ -275,31 +275,31 @@ footer {
 
 /* ------------------------------------------
    ESTILOS BASE / MÓVIL
-   ------------------------------------------ */
+------------------------------------------ */
 .hamburguesa {
     display: block;
-    padding: 10px;
+    padding: 8px;
     background: none;
     border: none;
     color: white; 
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
 }
 
 /* Ocultar el menú por defecto en móvil */
 nav.menu#menu {
-    display: none; /* CLAVE: Oculto por defecto en móvil */
+    display: none; /* Oculto por defecto en móvil */
     position: absolute;
-    top: 60px; /* Ajusta según altura del header */
+    top: 60px;
     right: 0;
-    width: 100%;
-    max-width: 300px;
+    width: 90%; /* Menú más estrecho en móvil */
+    max-width: 280px;
     background-color: #005cab;
     z-index: 1000;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-/* Clase que se añade con JS para MOSTRAR el menú en móvil */
+/* Clase que se añade con JS para mostrar el menú en móvil */
 .menu-visible {
     display: block !important;
 }
@@ -321,20 +321,19 @@ nav.menu#menu {
     display: block;
 }
 
-
 /* ------------------------------------------
    PC/ESCRITORIO (MIN-WIDTH: 769PX)
-   ------------------------------------------ */
+------------------------------------------ */
 @media (min-width: 769px) {
 
-    /* OCULTAMOS HAMBURGUESA EN PC */
+    /* Ocultamos hamburguesa en PC */
     .hamburguesa {
         display: none !important;
     }
 
-    /* FORZAMOS VISIBILIDAD Y POSICIÓN EN PC */
+    /* Forzamos visibilidad y posición en PC */
     nav.menu#menu {
-        display: block !important; /* CLAVE: Asegura que todo el menú se vea */
+        display: block !important;
         position: static !important;
         background-color: #005cab !important;
         width: 100%;
@@ -342,52 +341,57 @@ nav.menu#menu {
         box-shadow: none;
     }
 
-    /* Estilos para la lista principal en formato FLEX (horizontal) */
+    /* Lista principal en horizontal y compacta */
     #menu > ul {
         display: flex !important;
+        flex-wrap: wrap; /* Permite varias filas si no cabe */
         justify-content: center;
         align-items: center;
-        gap: 25px;
+        gap: 12px; /* Separación menor */
         padding: 0;
+        overflow: hidden;
     }
 
-    /* ESTA ES LA REGLA CLAVE: Asegura que todos los LI de primer nivel se muestren */
+    /* Elementos principales */
     #menu > ul > li {
-        border-bottom: none; /* Quitamos borde de móvil */
-        position: relative; /* Para el posicionamiento del submenú */
-        display: block !important; /* <--- ¡VISIBILIDAD GARANTIZADA! */
+        border-bottom: none;
+        position: relative;
+        display: block !important;
     }
     
-    /* Enlaces principales en PC */
+    /* Enlaces principales */
     #menu > ul > li > a {
-        padding: 12px 18px;
+        padding: 6px 10px; /* Más compacto */
         font-weight: bold;
+        font-size: 14px;  /* Fuente más pequeña */
         display: block;
+        white-space: nowrap; /* Evita que el texto se divida */
     }
 
-    /* Submenús en PC (posición absoluta) */
+    /* Submenús en PC */
     #menu .submenu ul {
         display: none; 
         position: absolute;
-        top: 100%; /* Justo debajo del elemento padre */
+        top: 100%;
         left: 0;
         background: #0078d7;
-        width: 180px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        width: 160px; /* Menos ancho para submenús */
+        border-radius: 6px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.3);
         z-index: 999;
     }
 
-    /* Visibilidad de Submenús al pasar el ratón */
+    /* Mostrar submenús al pasar el ratón */
     #menu .submenu:hover > ul {
         display: block; 
     }
 
-    /* Aseguramos que la clase 'activo' no interfiera con el hover en PC */
+    /* Evita conflicto con la clase 'activo' */
     .submenu.activo > ul {
         display: none;
     }
 }
+
 /* =========================
     PÁGINA GALERÍA
 ========================= */
@@ -1568,5 +1572,6 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
