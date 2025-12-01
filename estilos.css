@@ -263,7 +263,7 @@ footer {
 
 
 /* =========================================
-   ESTILOS BASE (MÓVIL) - Ocultar por defecto
+   ESTILOS BASE (MÓVIL) - OCULTAR POR DEFECTO
    ========================================= */
 
 /* Mostrar el botón hamburguesa en móvil */
@@ -272,7 +272,7 @@ footer {
     padding: 10px;
     background: none;
     border: none;
-    color: white; /* Asumiendo que tu header tiene fondo oscuro */
+    color: white; 
     font-size: 24px;
     cursor: pointer;
 }
@@ -281,7 +281,7 @@ footer {
 nav.menu#menu {
     display: none; /* <--- CLAVE: Oculto por defecto en móvil */
     position: absolute;
-    top: 60px; /* Ajusta según la altura de tu <header> */
+    top: 60px; 
     right: 0;
     width: 100%;
     max-width: 300px;
@@ -296,18 +296,19 @@ nav.menu#menu {
 }
 
 /* Estilos de la lista principal */
-#menu ul {
+#menu > ul { /* Selector más específico para el UL de primer nivel */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Estilos de los elementos de la lista y enlaces */
-#menu ul li {
+/* Estilos de los elementos de la lista de primer nivel */
+#menu > ul > li { /* Selector muy específico para TODOS los LI de primer nivel */
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-#menu ul li a {
+/* Estilos para los enlaces principales en móvil */
+#menu > ul > li > a {
     display: block;
     padding: 15px 20px;
     color: white;
@@ -315,7 +316,7 @@ nav.menu#menu {
     text-decoration: none;
 }
 
-/* Los submenús también deben estar ocultos por defecto en móvil */
+/* Submenús en móvil: ocultos por defecto */
 #menu .submenu ul {
     display: none;
     background-color: #0078d7;
@@ -327,21 +328,19 @@ nav.menu#menu {
     display: block;
 }
 
-/* =========================================
-   MENÚ DESPLEGADO EN PC (MIN-WIDTH: 769PX)
-   ========================================= */
+---
+## 💻 MENÚ DESPLEGADO EN PC (MIN-WIDTH: 769PX)
+
 @media (min-width: 769px) {
 
-    /* FORZAMOS VISIBILIDAD DEL MENÚ EN PC */
+    /* FORZAMOS VISIBILIDAD DE TODO EL CONTENEDOR DEL MENÚ */
     nav.menu#menu {
-        display: block !important; /* <--- CLAVE: Asegura que se vea */
+        display: block !important;
         position: static !important;
         background-color: #005cab !important;
         width: 100%;
         max-width: none;
         box-shadow: none;
-        /* Quitamos el border-bottom en PC si se aplicó en móvil */
-        border-bottom: none; 
     }
 
     /* OCULTAMOS HAMBURGUESA EN PC */
@@ -350,7 +349,7 @@ nav.menu#menu {
     }
 
     /* Estilos para la lista principal en formato FLEX */
-    #menu ul {
+    #menu > ul {
         display: flex !important;
         justify-content: center;
         align-items: center;
@@ -359,15 +358,16 @@ nav.menu#menu {
         margin: 0;
     }
 
-    /* Estilos para CADA elemento de lista de nivel superior (incluido "Inicio" y todos los `.submenu`) */
-    #menu ul li {
+    /* ESTA ES LA REGLA CRÍTICA: Asegura que todos los LI de primer nivel se muestren */
+    #menu > ul > li {
         list-style: none;
         position: relative;
-        border: none; /* Quitamos el borde que usamos en móvil */
+        border: none;
+        display: block !important; /* <--- ¡ESTO LO ARREGLARÁ! */
     }
 
     /* Estilos para los enlaces principales */
-    #menu ul li a {
+    #menu > ul > li > a {
         padding: 12px 18px;
         color: white;
         font-weight: bold;
@@ -376,7 +376,7 @@ nav.menu#menu {
 
     /* SUBMENÚS EN PC (ocultos por defecto, visibles al pasar el mouse) */
     #menu .submenu ul {
-        display: none; /* <--- CLAVE: Oculto por defecto */
+        display: none; 
         position: absolute;
         top: 45px;
         left: 0;
@@ -403,7 +403,6 @@ nav.menu#menu {
         display: none;
     }
 }
-
 
 /* =========================
     PÁGINA GALERÍA
@@ -1585,4 +1584,5 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
