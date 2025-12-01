@@ -275,7 +275,7 @@ nav.menu#menu {
 #menu > ul {
     display: flex;
     gap: 12px;             /* Espacio entre ítems */
-    padding: 0 10px;       /* Padding lateral */
+    padding: 0 50px;       /* Padding lateral */
     margin: 0;
     list-style: none;
     overflow-x: auto;      /* Scroll horizontal si es necesario */
@@ -450,7 +450,7 @@ nav.menu#menu {
     /* NUEVO — permite ver más y tener scroll */
     max-height: 350px;     /* Ajustá este número si querés más altura */
     overflow-y: auto;      /* Scroll vertical */
-    padding: 10px 0;       /* Reduce padding para ver más opciones */
+    padding: 50px 0;       /* Reduce padding para ver más opciones */
 }
 
     /* Opciones dentro del submenú */
@@ -1746,6 +1746,7 @@ nav.menu#menu > ul {
     border: 2px solid transparent; /* deja espacio visual alrededor */
     background-clip: padding-box;
 }
+
 
 
 
