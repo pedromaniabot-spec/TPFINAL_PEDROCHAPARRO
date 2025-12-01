@@ -341,30 +341,43 @@ nav.menu#menu {
         box-shadow: none;
     }
 
-    /* Lista principal en horizontal y compacta */
+    /* Lista principal en horizontal con scroll */
     #menu > ul {
         display: flex !important;
-        flex-wrap: wrap; /* Permite varias filas si no cabe */
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        gap: 12px; /* Separación menor */
-        padding: 0;
-        overflow: hidden;
+        gap: 12px; 
+        padding: 0 5px;
+        overflow-x: auto;  /* Permite scroll horizontal */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255,255,255,0.5) transparent;
     }
 
-    /* Elementos principales */
+    /* Estilo del scrollbar en Chrome/Edge */
+    #menu > ul::-webkit-scrollbar {
+        height: 6px;
+    }
+    #menu > ul::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.5);
+        border-radius: 3px;
+    }
+    #menu > ul::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Mantener los elementos inline sin romper */
     #menu > ul > li {
+        flex: 0 0 auto; /* Evita que los elementos se encogen */
         border-bottom: none;
         position: relative;
         display: block !important;
     }
-    
+
     /* Enlaces principales */
     #menu > ul > li > a {
-        padding: 6px 10px; /* Más compacto */
+        padding: 6px 10px;
         font-weight: bold;
-        font-size: 14px;  /* Fuente más pequeña */
-        display: block;
+        font-size: 14px;
         white-space: nowrap; /* Evita que el texto se divida */
     }
 
@@ -375,7 +388,7 @@ nav.menu#menu {
         top: 100%;
         left: 0;
         background: #0078d7;
-        width: 160px; /* Menos ancho para submenús */
+        width: 160px;
         border-radius: 6px;
         box-shadow: 0 0 8px rgba(0,0,0,0.3);
         z-index: 999;
@@ -391,6 +404,7 @@ nav.menu#menu {
         display: none;
     }
 }
+
 
 /* =========================
     PÁGINA GALERÍA
@@ -1572,6 +1586,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
