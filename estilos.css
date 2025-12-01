@@ -317,59 +317,56 @@ footer {
     border-radius: 8px;
 }
 
-/* =========================
-   VERSIÓN PC (ARREGLO DEFINITIVO)
-========================= */
-
+/* Menú visible en PC */
 @media (min-width: 769px) {
-    .hamburguesa {
-        display: none; /* Ocultar hamburguesa en PC */
+
+    /* FORZAMOS VISIBILIDAD EN PC */
+    nav.menu#menu {
+        display: block !important;
     }
 
-    nav.menu {
-        display: block !important; /* El menú ahora aparece SIEMPRE en PC */
+    #menu {
+        position: static;
         background-color: transparent;
-        padding: 0;
     }
 
-    .menu ul {
+    #menu ul {
         display: flex;
         justify-content: center;
         gap: 20px;
     }
 
-    .menu ul li {
+    #menu ul li {
         border: none;
-        padding: 0;
+        position: relative;
     }
 
-    .menu ul li a {
-        padding: 10px 20px;
+    #menu ul li a {
+        padding: 10px 15px;
         color: white;
         font-weight: bold;
     }
 
-    /* Submenús bonitos en PC */
-    .submenu ul {
+    /* Submenús */
+    #menu .submenu ul {
+        display: none;
         position: absolute;
         top: 40px;
-        left: 0;
-        width: 180px;
         background: #005cab;
-        padding: 10px 0;
+        padding: 0;
+        width: 180px;
         border-radius: 8px;
-        display: none;
     }
 
-    .submenu:hover ul {
+    #menu .submenu:hover ul {
         display: block;
     }
 
-    .submenu ul li {
-        padding: 10px;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
+    .hamburguesa {
+        display: none;
     }
 }
+
 
 
 /* =========================
@@ -1552,6 +1549,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
