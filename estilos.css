@@ -447,7 +447,7 @@ nav.menu#menu {
         box-shadow: 0 0 12px rgba(0,0,0,0.4);
         z-index: 999;
         overflow: visible; /* Para que no se corte */
-        padding: 15px 0; /* Más espacio vertical */
+        padding: 35px 0; /* Más espacio vertical */
     }
 
     /* Opciones dentro del submenú */
@@ -1701,6 +1701,7 @@ document.addEventListener('DOMContentLoaded', () => {
 #menu > ul > li:hover {
     background-color: #2c2c2c;
 }
+
 
 
 
