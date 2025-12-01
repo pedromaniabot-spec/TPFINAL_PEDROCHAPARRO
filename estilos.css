@@ -260,52 +260,134 @@ footer {
 }
 
 
+/* ------------------------------------------
+   RESET BÁSICO PARA EL MENÚ
+   ------------------------------------------ */
+#menu ul, #menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#menu a {
+    text-decoration: none;
+    color: white;
+}
 
-
-/* ------------------ BOTÓN HAMBURGUESA ------------------ */
+/* ------------------------------------------
+   ESTILOS BASE / MÓVIL
+   ------------------------------------------ */
 .hamburguesa {
-    display: none;
+    display: block;
+    padding: 10px;
     background: none;
     border: none;
-    color: white;
-    font-size: 26px;
+    color: white; 
+    font-size: 24px;
     cursor: pointer;
+}
+
+/* Ocultar el menú por defecto en móvil */
+nav.menu#menu {
+    display: none; /* CLAVE: Oculto por defecto en móvil */
     position: absolute;
-    right: 20px;
-    top: 15px;
+    top: 60px; /* Ajusta según altura del header */
+    right: 0;
+    width: 100%;
+    max-width: 300px;
+    background-color: #005cab;
+    z-index: 1000;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-/* ------------------ VERSIÓN MÓVIL ------------------ */
-@media (max-width: 768px) {
+/* Clase que se añade con JS para MOSTRAR el menú en móvil */
+.menu-visible {
+    display: block !important;
+}
 
-    /* Mostrar botón hamburguesa */
+/* Estilos de los elementos de la lista en móvil */
+#menu > ul > li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Submenús en móvil: ocultos por defecto */
+#menu .submenu ul {
+    display: none;
+    background-color: #0078d7;
+    padding-left: 10px;
+}
+
+/* Estilo para mostrar el submenú cuando se le añade la clase 'activo' con JS */
+.submenu.activo > ul {
+    display: block;
+}
+
+
+/* ------------------------------------------
+   PC/ESCRITORIO (MIN-WIDTH: 769PX)
+   ------------------------------------------ */
+@media (min-width: 769px) {
+
+    /* OCULTAMOS HAMBURGUESA EN PC */
     .hamburguesa {
+        display: none !important;
+    }
+
+    /* FORZAMOS VISIBILIDAD Y POSICIÓN EN PC */
+    nav.menu#menu {
+        display: block !important; /* CLAVE: Asegura que todo el menú se vea */
+        position: static !important;
+        background-color: #005cab !important;
+        width: 100%;
+        max-width: none;
+        box-shadow: none;
+    }
+
+    /* Estilos para la lista principal en formato FLEX (horizontal) */
+    #menu > ul {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        padding: 0;
+    }
+
+    /* ESTA ES LA REGLA CLAVE: Asegura que todos los LI de primer nivel se muestren */
+    #menu > ul > li {
+        border-bottom: none; /* Quitamos borde de móvil */
+        position: relative; /* Para el posicionamiento del submenú */
+        display: block !important; /* <--- ¡VISIBILIDAD GARANTIZADA! */
+    }
+    
+    /* Enlaces principales en PC */
+    #menu > ul > li > a {
+        padding: 12px 18px;
+        font-weight: bold;
         display: block;
     }
 
-    /* Ocultar menú por defecto */
-    .menu {
+    /* Submenús en PC (posición absoluta) */
+    #menu .submenu ul {
+        display: none; 
+        position: absolute;
+        top: 100%; /* Justo debajo del elemento padre */
+        left: 0;
+        background: #0078d7;
+        width: 180px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        z-index: 999;
+    }
+
+    /* Visibilidad de Submenús al pasar el ratón */
+    #menu .submenu:hover > ul {
+        display: block; 
+    }
+
+    /* Aseguramos que la clase 'activo' no interfiera con el hover en PC */
+    .submenu.activo > ul {
         display: none;
-        width: 100%;
-    }
-
-    /* Menú vertical */
-    .menu ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    /* Submenús se abren por clic (Menu.js debe controlarlo) */
-    .submenu ul {
-        position: relative;
-    }
-
-    .menu.activo {
-        display: block;
     }
 }
-
-
 /* =========================
     PÁGINA GALERÍA
 ========================= */
@@ -1535,6 +1617,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: none !important;
     }
 }
+
 
 
 
