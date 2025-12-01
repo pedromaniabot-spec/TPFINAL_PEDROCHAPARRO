@@ -263,7 +263,7 @@ footer {
 
 
 /* =========================================
-   ESTILOS BASE (MÓVIL)
+   ESTILOS BASE (MÓVIL) - Ocultar por defecto
    ========================================= */
 
 /* Mostrar el botón hamburguesa en móvil */
@@ -279,12 +279,12 @@ footer {
 
 /* Ocultar el menú por defecto en móvil */
 nav.menu#menu {
-    display: none; /* OCULTO POR DEFECTO */
+    display: none; /* <--- CLAVE: Oculto por defecto en móvil */
     position: absolute;
     top: 60px; /* Ajusta según la altura de tu <header> */
     right: 0;
     width: 100%;
-    max-width: 300px; /* Limita el ancho en móvil si lo deseas */
+    max-width: 300px;
     background-color: #005cab;
     z-index: 1000;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
@@ -318,7 +318,7 @@ nav.menu#menu {
 /* Los submenús también deben estar ocultos por defecto en móvil */
 #menu .submenu ul {
     display: none;
-    background-color: #0078d7; /* Un color ligeramente diferente para el submenú */
+    background-color: #0078d7;
     padding-left: 10px;
 }
 
@@ -328,18 +328,20 @@ nav.menu#menu {
 }
 
 /* =========================================
-   MENÚ DESPLEGADO EN PC (ARREGLADO)
+   MENÚ DESPLEGADO EN PC (MIN-WIDTH: 769PX)
    ========================================= */
 @media (min-width: 769px) {
 
     /* FORZAMOS VISIBILIDAD DEL MENÚ EN PC */
     nav.menu#menu {
-        display: block !important;
+        display: block !important; /* <--- CLAVE: Asegura que se vea */
         position: static !important;
         background-color: #005cab !important;
         width: 100%;
-        max-width: none; /* Quitamos la limitación de ancho para PC */
+        max-width: none;
         box-shadow: none;
+        /* Quitamos el border-bottom en PC si se aplicó en móvil */
+        border-bottom: none; 
     }
 
     /* OCULTAMOS HAMBURGUESA EN PC */
@@ -347,6 +349,7 @@ nav.menu#menu {
         display: none !important;
     }
 
+    /* Estilos para la lista principal en formato FLEX */
     #menu ul {
         display: flex !important;
         justify-content: center;
@@ -356,12 +359,14 @@ nav.menu#menu {
         margin: 0;
     }
 
+    /* Estilos para CADA elemento de lista de nivel superior (incluido "Inicio" y todos los `.submenu`) */
     #menu ul li {
         list-style: none;
         position: relative;
-        border: none;
+        border: none; /* Quitamos el borde que usamos en móvil */
     }
 
+    /* Estilos para los enlaces principales */
     #menu ul li a {
         padding: 12px 18px;
         color: white;
@@ -371,7 +376,7 @@ nav.menu#menu {
 
     /* SUBMENÚS EN PC (ocultos por defecto, visibles al pasar el mouse) */
     #menu .submenu ul {
-        display: none;
+        display: none; /* <--- CLAVE: Oculto por defecto */
         position: absolute;
         top: 45px;
         left: 0;
@@ -384,7 +389,7 @@ nav.menu#menu {
         z-index: 999;
     }
 
-    #menu .submenu:hover ul {
+    #menu .submenu:hover > ul {
         display: block; /* Visibilidad al hacer HOVER en PC */
     }
 
@@ -393,12 +398,12 @@ nav.menu#menu {
         color: white;
     }
     
-    /* Aseguramos que los submenús no tengan la clase 'activo' en PC (limpieza) */
+    /* Limpieza: Aseguramos que los submenús no tengan la clase 'activo' en PC (porque usamos hover) */
     #menu .submenu.activo > ul {
         display: none;
     }
-    
 }
+
 
 /* =========================
     PÁGINA GALERÍA
@@ -1580,3 +1585,4 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
