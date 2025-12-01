@@ -358,6 +358,54 @@ footer {
     }
 }
 
+/* ====== FORZAR QUE EL MENÚ APAREZCA EN PC ====== */
+@media (min-width: 769px) {
+    nav.menu {
+        display: block !important;
+        background-color: #005cab;
+    }
+
+    /* El menú se ordena horizontal */
+    nav.menu ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Quita bordes feos del modo móvil */
+    nav.menu ul li {
+        border: none;
+        position: relative;
+    }
+
+    /* Estilo de los enlaces */
+    nav.menu ul li a {
+        padding: 10px 15px;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Submenús en PC (solo al pasar el mouse) */
+    nav.menu .submenu ul {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background: #003d6b;
+        padding: 0;
+        width: 180px;
+        border-radius: 8px;
+    }
+
+    nav.menu .submenu:hover ul {
+        display: block;
+    }
+
+    /* La hamburguesa desaparece en PC */
+    .hamburguesa {
+        display: none !important;
+    }
+}
 
 
 /* =========================
@@ -1540,6 +1588,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
