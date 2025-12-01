@@ -381,10 +381,10 @@ nav.menu#menu {
         white-space: nowrap; /* Evita que el texto se divida */
     }
 
-    /* Submenús en PC */
+    /* Submenús en PC: absolute para evitar que se corten */
     #menu .submenu ul {
         display: none; 
-        position: absolute;
+        position: absolute; /* Sale del flujo del UL principal */
         top: 100%;
         left: 0;
         background: #0078d7;
@@ -392,6 +392,7 @@ nav.menu#menu {
         border-radius: 6px;
         box-shadow: 0 0 8px rgba(0,0,0,0.3);
         z-index: 999;
+        overflow: visible; /* Para que no se corte */
     }
 
     /* Mostrar submenús al pasar el ratón */
@@ -1586,6 +1587,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
