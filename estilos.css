@@ -267,38 +267,24 @@ footer {
 /* Contenedor general del menú */
 nav.menu#menu {
     width: 100%;
+    max-width: 100%;
     background-color: #005cab;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Lista principal */
 #menu > ul {
     display: flex;
-    gap: 12px;             /* Espacio entre ítems */
-    padding: 0 100px;       /* Padding lateral */
+    gap: 12px;
+    padding: 0 20px;
     margin: 0;
     list-style: none;
-    overflow-x: auto;      /* Scroll horizontal si es necesario */
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.5) transparent;
-}
-
-/* Scrollbar Chrome/Edge */
-#menu > ul::-webkit-scrollbar {
-    height: 6px;
-}
-#menu > ul::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.5);
-    border-radius: 3px;
-}
-#menu > ul::-webkit-scrollbar-track {
-    background: transparent;
+    overflow: visible !important;
 }
 
 /* Items de menú */
 #menu > ul > li {
-    flex: 0 0 auto; /* Evita que los ítems se encojan */
+    flex: 0 0 auto;
     position: relative;
 }
 
@@ -313,13 +299,13 @@ nav.menu#menu {
     transition: background 0.3s;
 }
 
-/* Hover de los enlaces */
+/* Hover */
 #menu > ul > li > a:hover {
     background-color: #0078d7;
     border-radius: 4px;
 }
 
-/* Submenú / dropdown */
+/* SUBMENÚ */
 #menu > ul > li > ul {
     display: none;
     position: absolute;
@@ -329,153 +315,91 @@ nav.menu#menu {
     list-style: none;
     padding: 0;
     margin: 0;
-    min-width: 150px;
+    min-width: 180px;
     z-index: 999;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
 
-/* Ítems de submenú */
-#menu > ul > li > ul > li > a {
-    padding: 8px 12px;
+/* Ítems del submenú */
+#menu > ul > li > ul > li a {
+    padding: 10px 14px;
     display: block;
+    color: white;
+    text-decoration: none;
 }
 
-/* Hover submenú */
+/* Hover en submenú */
+#menu > ul > li > ul > li a:hover {
+    background-color: #004a7c;
+}
+
+/* Mostrar submenú */
 #menu > ul > li:hover > ul {
     display: block;
 }
 
-/* Responsivo: móvil */
+/* Responsivo móvil */
 @media (max-width: 768px) {
-    nav.menu#menu {
-        position: relative;
+
+    .hamburguesa {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 26px;
+        color: white;
+        margin: 10px;
+        cursor: pointer;
     }
 
-    /* Ocultar lista principal, mostrar hamburguesa */
     #menu > ul {
         display: none;
         flex-direction: column;
         background-color: #005cab;
         width: 100%;
+        padding: 0;
     }
 
-    /* Mostrar lista al hacer click en hamburguesa */
     #menu > ul.active {
         display: flex;
     }
 
-    /* Enlaces en móvil */
     #menu > ul > li > a {
-        padding: 12px;
+        padding: 14px;
+    }
+
+    /* Submenú en móvil */
+    #menu > ul > li > ul {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
     }
 }
 
-/* ------------------------------------------
-   PC/ESCRITORIO (MIN-WIDTH: 769PX)
------------------------------------------- */
+/* PC escritorio */
 @media (min-width: 769px) {
 
-    /* Ocultamos hamburguesa en PC */
     .hamburguesa {
         display: none !important;
     }
 
-    /* Forzamos visibilidad y posición en PC */
     nav.menu#menu {
         display: block !important;
-        position: static !important;
-        background-color: #005cab !important;
-        width: 100%;
-        max-width: none;
-        box-shadow: none;
+        overflow: visible;
     }
 
-    /* Lista principal en horizontal con scroll suave */
     #menu > ul {
         display: flex !important;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 12px; 
-        padding: 0 5px;
-        overflow-x: auto;  /* Permite scroll horizontal */
-        scroll-behavior: smooth; /* Scroll suave */
-        scrollbar-width: thin;
-        scrollbar-color: rgba(255,255,255,0.5) transparent;
+        overflow: visible !important;
+        padding: 0 10px;
     }
 
-    /* Centrar el scroll al cargar la página */
-    #menu > ul {
-        scroll-snap-type: x mandatory;
-    }
-
-    /* Estilo del scrollbar en Chrome/Edge */
-    #menu > ul::-webkit-scrollbar {
-        height: 6px;
-    }
-    #menu > ul::-webkit-scrollbar-thumb {
-        background: rgba(255,255,255,0.5);
-        border-radius: 3px;
-    }
-    #menu > ul::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    /* Mantener los elementos inline sin romper */
     #menu > ul > li {
-        flex: 0 0 auto; /* Evita que los elementos se encogen */
-        border-bottom: none;
         position: relative;
-        display: block !important;
     }
 
-    /* Enlaces principales */
     #menu > ul > li > a {
-        padding: 6px 12px; /* Más ancho y cómodo */
-        font-weight: bold;
-        font-size: 16px; /* Más grande para visibilidad */
-        white-space: nowrap; /* Evita que el texto se divida */
-    }
-
-    /* Submenús en PC: absolute para evitar que se corten */
-    #menu .submenu ul {
-    display: none; 
-    position: absolute;
-    top: 100%;      
-    left: 0;
-    background: #0078d7;
-    width: 250px;          /* Más ancho */
-    border-radius: 6px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
-    z-index: 999;
-
-    /* NUEVO — permite ver más y tener scroll */
-    max-height: 350px;     /* Ajustá este número si querés más altura */
-    overflow-y: auto;      /* Scroll vertical */
-    padding: 50px 0;       /* Reduce padding para ver más opciones */
-}
-
-    /* Opciones dentro del submenú */
-    #menu .submenu ul li a {
-        display: block;
-        padding: 12px 20px; /* Más alto y ancho */
-        font-size: 16px;   /* Fuente más grande */
-        color: white;
-        transition: background 0.3s, color 0.3s; /* Suaviza hover */
-    }
-
-    /* Hover para cada opción del submenú */
-    #menu .submenu ul li a:hover {
-        background-color: #004a7c;
-        color: #fff;
-    }
-
-    /* Mostrar submenús al pasar el ratón */
-    #menu .submenu:hover > ul {
-        display: block; 
-    }
-
-    /* Evita conflicto con la clase 'activo' */
-    .submenu.activo > ul {
-        display: none;
+        font-size: 16px;
     }
 }
 
@@ -1746,6 +1670,7 @@ nav.menu#menu > ul {
     border: 2px solid transparent; /* deja espacio visual alrededor */
     background-clip: padding-box;
 }
+
 
 
 
