@@ -262,102 +262,48 @@ footer {
 
 
 
-/* =========================
-      MENÚ GENERAL
-========================= */
-.menu {
-    background-color: #005cab;
-    display: none; /* Se oculta SOLO en móvil */
-    width: 100%;
-}
-
-/* Estilos generales del menú */
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu ul li {
-    border-bottom: 1px solid #003f73;
-}
-
-.menu ul li a {
-    display: block;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Submenús ocultos en móvil */
-.menu ul li ul {
-    display: none;
-    background-color: #0078d7;
-}
-
-.submenu:hover ul {
-    display: block;
-}
-
-/* Botón hamburguesa */
+/* ------------------ BOTÓN HAMBURGUESA ------------------ */
 .hamburguesa {
-    font-size: 30px;
+    display: none;
     background: none;
     border: none;
     color: white;
+    font-size: 26px;
     cursor: pointer;
-    margin-top: 10px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
 }
 
+/* ------------------ VERSIÓN MÓVIL ------------------ */
+@media (max-width: 768px) {
 
-/* =========================
-      MENÚ EN PC
-========================= */
-@media (min-width: 769px) {
-
-    /* FORZAMOS VISIBILIDAD */
-    nav.menu {
-        display: block !important;
-    }
-
+    /* Mostrar botón hamburguesa */
     .hamburguesa {
+        display: block;
+    }
+
+    /* Ocultar menú por defecto */
+    .menu {
         display: none;
+        width: 100%;
     }
 
-    /* Menú horizontal */
+    /* Menú vertical */
     .menu ul {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        flex-direction: column;
+        width: 100%;
     }
 
-    .menu ul li {
-        border: none;
+    /* Submenús se abren por clic (Menu.js debe controlarlo) */
+    .submenu ul {
         position: relative;
     }
 
-    .menu ul li a {
-        padding: 10px 15px;
-    }
-
-    /* Submenú aparece al pasar el mouse */
-    .menu ul li ul {
-        position: absolute;
-        top: 40px;
-        left: 0;
-        width: 180px;
-        display: none;
-        border-radius: 8px;
-        background-color: #005cab;
-        padding: 0;
-    }
-
-    .menu ul li:hover ul {
+    .menu.activo {
         display: block;
     }
 }
-
 
 
 /* =========================
