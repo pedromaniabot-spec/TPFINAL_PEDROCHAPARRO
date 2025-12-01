@@ -275,7 +275,7 @@ nav.menu#menu {
 #menu > ul {
     display: flex;
     gap: 12px;             /* Espacio entre ítems */
-    padding: 0 50px;       /* Padding lateral */
+    padding: 0 100px;       /* Padding lateral */
     margin: 0;
     list-style: none;
     overflow-x: auto;      /* Scroll horizontal si es necesario */
@@ -1746,6 +1746,7 @@ nav.menu#menu > ul {
     border: 2px solid transparent; /* deja espacio visual alrededor */
     background-clip: padding-box;
 }
+
 
 
 
