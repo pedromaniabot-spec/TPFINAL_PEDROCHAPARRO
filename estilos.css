@@ -388,11 +388,25 @@ nav.menu#menu {
         top: 100%;
         left: 0;
         background: #0078d7;
-        width: 160px;
+        width: 180px; /* Puedes ajustar ancho si quieres */
         border-radius: 6px;
         box-shadow: 0 0 8px rgba(0,0,0,0.3);
         z-index: 999;
         overflow: visible; /* Para que no se corte */
+        padding: 10px 0; /* Espacio vertical para visualizar mejor */
+    }
+
+    /* Opciones dentro del submenú */
+    #menu .submenu ul li a {
+        display: block;
+        padding: 10px 15px; /* Más alto y cómodo para click */
+        font-size: 14px;
+        color: white;
+    }
+
+    /* Hover para cada opción del submenú */
+    #menu .submenu ul li a:hover {
+        background-color: #0060a0;
     }
 
     /* Mostrar submenús al pasar el ratón */
@@ -1587,6 +1601,7 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
     }
 }
+
 
 
 
